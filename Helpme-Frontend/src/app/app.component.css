@@ -1,6 +1,7 @@
 .nav-item , .navbar-brand ,.dropdown-toggle{
     white-space: pre;
     width: 150px;
+   
 }
 .nav-link , .navbar-brand{white-space: pre;
     

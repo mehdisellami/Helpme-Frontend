@@ -10,7 +10,6 @@ import { HellomsgComponent } from './hellomsg/hellomsg.component';
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +21,9 @@ import { HellomsgComponent } from './hellomsg/hellomsg.component';
    
     
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+   
+    
     
   ],
   providers: [],
