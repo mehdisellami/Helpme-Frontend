@@ -1,0 +1,26 @@
+.nav-item , .navbar-brand ,.dropdown-toggle{
+    white-space: pre;
+    width: 150px;
+   
+}
+.nav-link , .navbar-brand{white-space: pre;
+    
+}
+
+.body{
+    font-family: "Roboto";
+   
+    
+}
+
+agm-map {
+    height: 300px;
+  }
+
+
+  .navbar-brand{
+    max-height: 40px;
+  }
+
+
+
