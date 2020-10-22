@@ -9,7 +9,18 @@
 
 .body{
     font-family: "Roboto";
-    font-weight : 400;
+   
     
 }
+
+agm-map {
+    height: 300px;
+  }
+
+
+  .navbar-brand{
+    max-height: 40px;
+  }
+
+
 

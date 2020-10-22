@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Config } from 'protractor';
 import { RestService } from './service/rest.service';
+import { Router, NavigationEnd } from '@angular/router';
 
 
 @Component({
@@ -14,14 +15,17 @@ export class AppComponent implements OnInit {
   titleMap = 'Bonjour Thomas ! prêts pour vos prochaines missions? ';
   
 
-  lat = 28.704060;
-  long = 77.102493;
-  googleMapType = 'satellite';
+  lat = 51.678418;
+  lng = 7.809007;
+
+  
   constructor(public restservice :RestService) { 
 
     
   }
   ngOnInit(){
+    
+    
 
     this.getEquipe();
 

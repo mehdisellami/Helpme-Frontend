@@ -4,3 +4,6 @@
 
 
 @import url('../node_modules/font-awesome/css/font-awesome.min.css');
+
+@import '~mapbox-gl/dist/mapbox-gl.css';
+@import '~@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css';
