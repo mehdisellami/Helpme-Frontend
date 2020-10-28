@@ -1,1 +1,13 @@
-<h1> <center> Bonjour Alexis, besoin d'aide ? Ça n'a jamais été aussi facile </center></h1>
+<h1> <div style="text-align: center;"> Bonjour {{prenom}}, besoin d'aide ? Ça n'a jamais été aussi facile </div> </h1>
+
+<h1>Editer</h1>
+<form action="">
+    <div><label for="">Prenom</label><input type="text" [(ngModel)]="prenom2" name="prenom2"></div>
+    <div><label for="">Nom</label><input type="text" [(ngModel)]="nom2" name="nom2"></div>
+    <div><label for="">Adresse</label><input type="text" [(ngModel)]="adresse" name="adresse"></div>
+    <div><label for="">Type de mission</label><input type="text" [(ngModel)]="typemission" name="typemission"></div>
+    <div><label for="">Date et heure</label><input type="text" [(ngModel)]="date" name="date"></div>
+    <div><label for="">Téléphone</label><input type="text" [(ngModel)]="telephone" name="telephone"></div>
+    <div><label for="">Email</label><input type="email" [(ngModel)]="email" name="email"></div>
+    <div><label for="">Description</label><input type="text" [(ngModel)]="description" name="description"></div>
+</form>

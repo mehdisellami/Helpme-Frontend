@@ -6,8 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./creation-mission.component.css']
 })
 export class CreationMissionComponent implements OnInit {
-
-  constructor() { }
+  prenom: string;
+  nom: string;
+  prenom2: string;
+  nom2: string;
+  adresse: string;
+  typemission: string;
+  telephone: string;
+  date: string;
+  email: string;
+  description: string;
+  constructor() {
+  this.prenom = 'Alexis';
+  this.nom = 'Test';
+  this.prenom2=this.prenom;
+  this.nom2=this.nom;
+   }
 
   ngOnInit(): void {
   }

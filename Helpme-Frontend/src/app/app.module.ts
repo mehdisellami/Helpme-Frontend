@@ -11,7 +11,7 @@ import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { MapComponent } from './map/map.component';
 import { RouterModule } from '@angular/router';
 import { CreationMissionComponent } from './creation-mission/creation-mission.component';
-
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -26,6 +26,7 @@ import { CreationMissionComponent } from './creation-mission/creation-mission.co
   ],
   imports: [
     BrowserModule,
+    FormsModule,
    
     
     AppRoutingModule,
