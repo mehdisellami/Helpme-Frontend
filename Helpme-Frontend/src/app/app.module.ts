@@ -4,16 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HellomsgComponent } from './hellomsg/hellomsg.component';
+import { HellomsgComponent } from './components/hellomsg/hellomsg.component';
 import { AgmCoreModule } from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
-import { MapComponent } from './map/map.component';
+import { MapComponent } from './components/map/map.component';
 import { RouterModule } from '@angular/router';
-import { CreationMissionComponent } from './creation-mission/creation-mission.component';
+import { CreationMissionComponent } from './components/creation-mission/creation-mission.component';
 import { FormsModule } from '@angular/forms';
-
-
 
 @NgModule({
   declarations: [
