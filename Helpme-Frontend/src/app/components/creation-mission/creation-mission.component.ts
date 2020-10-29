@@ -21,6 +21,7 @@ export class CreationMissionComponent implements OnInit {
   this.nom = 'Test';
   this.prenom2=this.prenom;
   this.nom2=this.nom;
+  this.description="Décrivez en détail votre demande";
    }
 
   ngOnInit(): void {
