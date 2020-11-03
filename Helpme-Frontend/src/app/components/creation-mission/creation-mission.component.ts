@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MissionService } from 'src/app/service/mission.service';
+import { Mission } from './mission.model';
 
 @Component({
   selector: 'app-creation-mission',
@@ -16,7 +18,11 @@ export class CreationMissionComponent implements OnInit {
   date: string;
   email: string;
   description: string;
-  constructor() {
+
+  missionInstance:Mission = new Mission();
+
+
+  constructor( private mission:MissionService) {
   this.prenom = 'Alexis';
   this.nom = 'Sidate';
   this.prenom2=this.prenom;
@@ -25,6 +31,21 @@ export class CreationMissionComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.btnadd();
   }
 
+
+  btnadd():void{
+
+    this.mission.PostMission(this.missionInstance)
+    .subscribe( data => {
+      alert("Mission Ajouté ");
+      return data;
+    },
+    (err)=>{
+      console.log(err);
+    }
+    );
+    
+}
 }

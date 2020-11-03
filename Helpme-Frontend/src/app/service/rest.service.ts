@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { User } from '../user/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +10,15 @@ export class RestService {
 
   public url="http://localhost:5001/test";
 
+
+  public urlpostuser="http://localhost:5001/newuser";
+
+  public urlgetuser="http://localhost:5001/listeUser";
+
+
  
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,public User : User) {
     
    
 
@@ -22,6 +29,19 @@ export class RestService {
     return this.http.get<String>(this.url)  ;
     
     
+  }
+
+
+  PostUser(user){
+
+    return this.http.post<User>(this.urlpostuser,user);
+
+  }
+
+  GetUser(){
+
+    return this.http.get<User>(this.urlgetuser);
+
   }
 
 }
