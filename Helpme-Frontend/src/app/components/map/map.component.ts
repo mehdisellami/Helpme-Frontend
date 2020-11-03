@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MissionService } from 'src/app/service/mission.service';
 
 @Component({
   selector: 'app-map',
@@ -7,15 +8,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
   
+  public mission:any=[];
+
+
+
+
   CheckedBx=false;
 
   click(ev){
     this.CheckedBx=true;
  }
 
-  constructor() { }
+  constructor(public RestMission : MissionService) { }
 
   ngOnInit(): void {
+    this.getMission();
   }
 
+
+
+  getMission(){
+    this.RestMission.GetMission().subscribe(
+      (data )=>{
+        this.mission=data;
+
+        console.log(data);
+
+        },
+
+    );
+  }
 }

@@ -11,9 +11,9 @@ import { Mission } from '../components/creation-mission/mission.model';
 )
 export class MissionService {
 
-  public urlpostmission="http://localhost:5001/newuser";
+  public urlpostmission="http://localhost:5001/newmission";
 
-  public urlgetmission="http://localhost:5001/listeUser";
+  public urlgetmission="http://localhost:5001/listeMission";
 
   constructor(private http: HttpClient) { }
 
@@ -27,7 +27,7 @@ export class MissionService {
 
   GetMission(){
 
-    return this.http.get<Mission>(this.urlgetmission);
+    return this.http.get<Object>(this.urlgetmission);
 
   }
 

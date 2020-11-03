@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MissionService } from '../service/mission.service';
 import { RestService } from '../service/rest.service';
 import { User } from './user.model';
 
@@ -8,16 +9,17 @@ import { User } from './user.model';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  public user:any=[];
+  public mission:any={};
 
   userInstance: User = new User();
 
-  constructor(public restservice :RestService) { }
+  constructor(public missionservice :MissionService , public restservice : RestService) { }
 
   ngOnInit(): void {
 
-    this.btnadd();
-    this.getEquipe();
+   
+    this.getUser();
+
   }
 
 
@@ -35,12 +37,12 @@ export class UserComponent implements OnInit {
   }
 
 
-  getEquipe(){
-    this.restservice.GetUser().subscribe(
+  getUser(){
+    this.missionservice.GetMission().subscribe(
       (data )=>{
-        this.user=data;
+        this.mission=data;
 
-        console.log(data);
+        console.log(this.mission);
 
         },
 

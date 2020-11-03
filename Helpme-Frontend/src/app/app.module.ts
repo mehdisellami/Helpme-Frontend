@@ -19,9 +19,8 @@ import { MissionService } from './service/mission.service';
 @NgModule({
   declarations: [
     AppComponent,
-  
+  UserComponent,
     MapComponent,
-    UserComponent,
     CreationMissionComponent
 
   ],

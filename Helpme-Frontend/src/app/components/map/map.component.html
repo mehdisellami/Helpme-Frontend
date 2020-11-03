@@ -16,10 +16,13 @@
 <br>
 <div class="container" *ngIf="CheckedBx" >
     <div class="row">
-      <div class="col-8">
+      <div class="col-7">
         <mgl-map [style]="'mapbox://styles/mapbox/streets-v9'"  [center]="[-74.5, 40]" [zoom]="[9]">  </mgl-map>
     </div>
       
+    <div class="col-4" *ngFor="let mission of mission">
+      <p style="text-align:center" class="bordure"> Mission : <br> Date Mission :  - {{mission.dateMission}} <br> - Adresse : {{mission.adressMission}} <br> - Acheter : {{mission.description}}</p>  
+    </div>
       </div>
       
     </div>
