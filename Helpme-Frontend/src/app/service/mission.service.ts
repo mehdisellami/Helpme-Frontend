@@ -15,7 +15,7 @@ export class MissionService {
 
   public urlgetmission="http://localhost:5001/listeUser";
 
-  constructor(private http: HttpClient, private mission : Mission) { }
+  constructor(private http: HttpClient) { }
 
 
 

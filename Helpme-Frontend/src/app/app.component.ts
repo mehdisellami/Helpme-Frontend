@@ -28,22 +28,19 @@ export class AppComponent implements OnInit {
 
 
 
-    this.getEquipe();
+    this.getWelcomemessage();
 
   }
 
 
-  getEquipe(){
+  getWelcomemessage(){
     this.restservice.getwelcomemessage().subscribe(
       (data )=>{
         this.msg=data;
 
-        console.log(data);
+        console.log();
 
         },
-
-
-
 
 
     );

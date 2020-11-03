@@ -8,6 +8,7 @@ import { User } from './user.model';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  public user:any=[];
 
   userInstance: User = new User();
 
@@ -16,7 +17,7 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
 
     this.btnadd();
-
+    this.getEquipe();
   }
 
 
@@ -28,21 +29,23 @@ export class UserComponent implements OnInit {
       return data;
     },
     (err)=>{
-      console.log(err);
     }
     );
     
-
-
-
-
-
-
-
   }
 
 
+  getEquipe(){
+    this.restservice.GetUser().subscribe(
+      (data )=>{
+        this.user=data;
 
+        console.log(data);
+
+        },
+
+    );
+  }
 
 
 }
