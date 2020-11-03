@@ -10,6 +10,7 @@ import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { MapComponent } from './map/map.component';
 import { RouterModule } from '@angular/router';
+import { UserComponent } from './user/user.component';
 
 
 
@@ -18,7 +19,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     AppComponent,
     HellomsgComponent,
-    MapComponent
+    MapComponent,
+    UserComponent
 
     
   ],
