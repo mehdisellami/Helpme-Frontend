@@ -17,9 +17,9 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    HellomsgComponent,
+  
     MapComponent,
-    UserComponent
+    UserComponent,
     CreationMissionComponent
 
   ],
