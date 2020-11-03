@@ -4,28 +4,38 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HellomsgComponent } from './hellomsg/hellomsg.component';
 import { AgmCoreModule } from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
-import { MapComponent } from './map/map.component';
+import { MapComponent } from './components/map/map.component';
 import { RouterModule } from '@angular/router';
+<<<<<<< HEAD
 import { UserComponent } from './user/user.component';
 
 
 
+=======
+import { CreationMissionComponent } from './components/creation-mission/creation-mission.component';
+import { FormsModule } from '@angular/forms';
+>>>>>>> refs/remotes/origin/master
 
 @NgModule({
   declarations: [
     AppComponent,
+<<<<<<< HEAD
     HellomsgComponent,
     MapComponent,
     UserComponent
+=======
+    MapComponent,
+    CreationMissionComponent
+>>>>>>> refs/remotes/origin/master
 
     
   ],
   imports: [
     BrowserModule,
+    FormsModule,
    
     
     AppRoutingModule,

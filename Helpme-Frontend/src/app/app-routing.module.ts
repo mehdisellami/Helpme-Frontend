@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { MapComponent } from './map/map.component';
+import { CreationMissionComponent } from './components/creation-mission/creation-mission.component';
+import { MapComponent } from './components/map/map.component';
 
 const routes: Routes = [ 
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   { path: 'app-map', component: MapComponent },
+  { path: 'app-creation-mission', component: CreationMissionComponent}
 ];
 
 @NgModule({

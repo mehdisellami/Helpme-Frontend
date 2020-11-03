@@ -12,7 +12,6 @@ export class MapComponent implements OnInit {
   click(ev){
     this.CheckedBx=true;
  }
-  
 
   constructor() { }
 
