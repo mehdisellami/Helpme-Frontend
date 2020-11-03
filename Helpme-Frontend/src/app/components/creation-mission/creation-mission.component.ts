@@ -18,7 +18,7 @@ export class CreationMissionComponent implements OnInit {
   description: string;
   constructor() {
   this.prenom = 'Alexis';
-  this.nom = 'Test';
+  this.nom = 'Sidate';
   this.prenom2=this.prenom;
   this.nom2=this.nom;
   this.description="Décrivez en détail votre demande";

@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HellomsgComponent } from './components/hellomsg/hellomsg.component';
 import { AgmCoreModule } from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
@@ -16,7 +15,6 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    HellomsgComponent,
     MapComponent,
     CreationMissionComponent
 
