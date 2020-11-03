@@ -1,7 +1,7 @@
 export class Mission{
     idMission: any;
-    nomMission: String;
-    adressMission: String;
+    nomMission: any;
+    adressMission: any;
     dateMission: any;
 
 }

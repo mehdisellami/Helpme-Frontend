@@ -1,17 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Mission } from './mission.modele';
+import { Utilisateur } from './Utilisateur.modele';
 import {url} from "inspector";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MissionService {
-  public url="http://localhost:5001/newmission";
-
-  Mission m1 = new Mission();
+  public url="http://localhost:5001/newuser";
+  Utilisateur u1 = new Utilisateur();
   constructor() {
-    this.m1.Http.get(url);
-   }
+    this.u1.Http.get(url);
+  }
 }
 
