@@ -9,6 +9,7 @@ import { User } from '../user/user.model';
 export class RestService {
 
   public url="http://localhost:5001/test";
+<<<<<<< HEAD
 
 
   public urlpostuser="http://localhost:5001/newuser";
@@ -23,12 +24,12 @@ export class RestService {
    
 
 
+=======
+  constructor(private http: HttpClient) {
+>>>>>>> 9a16a6e1ae977c26e8fcc5ab011ea347d52e84c8
   }
-  getwelcomemessage()  {
-    
-    return this.http.get<String>(this.url)  ;
-    
-    
+  getwelcomemessage(){
+    return this.http.get<Object>(this.url);
   }
 
 
