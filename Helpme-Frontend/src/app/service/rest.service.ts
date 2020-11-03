@@ -9,19 +9,10 @@ export class RestService {
 
   public url="http://localhost:5001/test";
 
-  
-
   constructor(private http: HttpClient) {
-    
-   
-
-
   }
-  getwelcomemessage()  {
-    
-    return this.http.get<String>(this.url)  ;
-    
-    
+  getwelcomemessage(){
+    return this.http.get<Object>(this.url);
   }
 
 }
