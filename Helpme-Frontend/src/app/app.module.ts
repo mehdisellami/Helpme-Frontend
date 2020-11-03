@@ -13,7 +13,6 @@ import { RouterModule } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { CreationMissionComponent } from './components/creation-mission/creation-mission.component';
 import { FormsModule } from '@angular/forms';
->>>>>>> refs/remotes/origin/master
 
 @NgModule({
   declarations: [
