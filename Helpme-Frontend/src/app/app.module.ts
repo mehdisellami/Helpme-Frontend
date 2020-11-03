@@ -13,6 +13,8 @@ import { RouterModule } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { CreationMissionComponent } from './components/creation-mission/creation-mission.component';
 import { FormsModule } from '@angular/forms';
+import { RestService } from './service/rest.service';
+import { MissionService } from './service/mission.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,7 @@ import { FormsModule } from '@angular/forms';
 
 
   ],
-  providers: [],
+  providers: [RestService,MissionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

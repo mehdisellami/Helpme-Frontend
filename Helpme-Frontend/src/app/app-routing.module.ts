@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CreationMissionComponent } from './components/creation-mission/creation-mission.component';
 import { MapComponent } from './components/map/map.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [ 
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   { path: 'app-map', component: MapComponent },
-  { path: 'app-creation-mission', component: CreationMissionComponent}
+  { path: 'app-creation-mission', component: CreationMissionComponent},
+  { path: 'app-creation-utilisateur', component: UserComponent}
 ];
 
 @NgModule({

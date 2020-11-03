@@ -2,10 +2,10 @@ export class User{
 
 
 
- Username:any
- Name:any
- Password:any
- Email:any
+ Username:string
+ Name:string
+ Password:string
+ Email:string
 
 
 }
