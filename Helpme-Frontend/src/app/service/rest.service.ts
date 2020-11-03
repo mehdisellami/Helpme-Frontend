@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 export class RestService {
 
   public url="http://localhost:5001/test";
-
   constructor(private http: HttpClient) {
   }
   getwelcomemessage(){

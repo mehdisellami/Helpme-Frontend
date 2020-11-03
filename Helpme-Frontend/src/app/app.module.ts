@@ -10,21 +10,18 @@ import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { MapComponent } from './components/map/map.component';
 import { RouterModule } from '@angular/router';
-
+import { UserComponent } from './user/user.component';
 import { CreationMissionComponent } from './components/creation-mission/creation-mission.component';
 import { FormsModule } from '@angular/forms';
+>>>>>>> refs/remotes/origin/master
 
 @NgModule({
   declarations: [
     AppComponent,
     HellomsgComponent,
-    MapComponent
-  ],
-  imports: [
-    BrowserModule,
     MapComponent,
+    UserComponent
     CreationMissionComponent
-
 
   ],
   imports: [
