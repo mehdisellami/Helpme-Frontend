@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   { path: 'app-map', component: MapComponent },
   { path: 'app-creation-mission', component: CreationMissionComponent},
-  { path: 'app-creation-utilisateur', component: UserComponent}
+  { path: 'app-creation-user', component: UserComponent}
 ];
 
 @NgModule({
