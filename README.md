@@ -1,9 +1,22 @@
 # Helpme-Frontend
 
+*Badges à rajouter*
+
 # Qui sommes-nous ?
  HelpMe est une application qui vous permet de chercher ou bien de créer des missions à destination de personnes à proximité de chez vous.
- 
-  # Installation 
+
+ # Installation 
  - [Installer Git](https://git-scm.com/downloads)
- - [Installer STS](https://spring.io/tools) 
- - [Install JDK 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+ 
+ ```
+ git clone git@github.com:mehdisellami/Helpme-Backend.git
+ ```
+
+L'application sera alors disponible à l'adresse [http://localhost:4200](http://localhost:4200). <br>
+Ce repository contient le Frontend de notre application. Le Backend se trouve à [cette adresse](https://github.com/mehdisellami/Helpme-Backend).
+
+# Auteurs
+* **Adja Ba** - [Github](https://github.com/adjarokhaya)
+* **Sellammi Mehdi** - [Github](https://github.com/mehdisellami)
+* **Sidate Alexis** - [Github](https://github.com/sidatealexis)
+* **Supreme Chelson** - [Github](https://github.com/SUPREMEchelson)
