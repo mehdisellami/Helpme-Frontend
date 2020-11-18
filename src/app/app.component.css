@@ -1,0 +1,22 @@
+.nav-item , .navbar-brand ,.dropdown-toggle{
+    white-space: pre;
+    width: 150px;
+   
+}
+.nav-link , .navbar-brand{white-space: pre;
+    
+}
+
+.body{
+    font-family: "Roboto";
+   
+    
+}
+
+
+
+
+  .navbar-brand{
+    max-height: 60px;
+  }
+

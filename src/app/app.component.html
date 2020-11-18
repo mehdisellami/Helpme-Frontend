@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <a class="navbar-brand" >
+        <img alt="Brand" src="../assets/img/logo3.jpg" width="90" height="40" alt=""/></a>
+
+        
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/app-map">Carte</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/app-creation-mission">Créer une mission</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/app-creation-user">Afficher missions</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login">Login</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+<br> 
+
+
+<!-- <agm-map style="height: 300px" [latitude]="51.673858" [longitude]="7.815982">
+  <agm-snazzy-info-window [isOpen]="true" [latitude]="51.673858" [longitude]="7.815982" [closeWhenOthersOpen]="true">
+    <ng-template>
+      My first Snazzy Info Window!
+    </ng-template>
+  </agm-snazzy-info-window>
+</agm-map> -->
+
+
+<router-outlet>
+
+
+</router-outlet>
+
