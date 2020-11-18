@@ -1,0 +1,95 @@
+<div class="container">
+    <div class="row">
+      <div class="col-8">
+        <h3>Bonjour Thomas ! Prêt pour vos prochaines missions ?  </h3> 
+      </div>
+      <div class="col-4">
+        <div class="custom-control custom-switch" *ngFor="let i of mission "    >
+          
+          <input type="checkbox"     class="custom-control-input"  id="customSwitches"  (click)="AdresstoLongLAt(i.adressMission)"    (click)="click($event)"  >
+        
+          <label class="custom-control-label" for="customSwitches"  (click)="AdresstoLongLAt(i.adressMission)"   ></label>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+<br>
+<div class="container" *ngIf="CheckedBx" >
+    <div class="row">
+      <div class="col-7">
+        <mgl-map [style]="'mapbox://styles/mapbox/streets-v9'"   [zoom]="[16.6]" > 
+         
+      <!-- Bouttons de navigations -->
+          <mgl-control mglNavigation  ></mgl-control>
+              
+          <!-- Localisation utilisateur -->
+                <mgl-control mglGeolocate [positionOptions]="{ enableHighAccuracy: true}" [trackUserLocation]="true"></mgl-control>
+        
+        <!-- point de la  mission -->
+  
+            <div *ngFor="let l of longlat">
+        <mgl-marker  #missionmarker [lngLat]="[l.features[0].center[0], l.features[0].center[1]]" >
+
+         
+        </mgl-marker>
+
+        <mgl-popup  [marker]="missionmarker" >
+          <div *ngFor="let x of mission ; let i=index ">
+            
+
+             
+             {{mission[x.nomMission]?.nomMission}}  ,
+              {{mission[i]?.adressMission}}
+            
+          </div>
+      
+      </mgl-popup>
+
+   
+      </div>
+
+        <mgl-marker  #CarrefourIvry [lngLat]="[2.3923346, 48.8193088]" >
+
+         
+        </mgl-marker>
+
+        <!-- Popup mission dans la map -->
+
+        
+
+
+
+
+        </mgl-map>
+    </div>
+      
+    <div class="col-4" *ngFor="let mission of mission" >
+      
+      <p style="text-align:center" class="bordure"> Mission : <br> Date Mission :  - {{mission.dateMission}} <br> - Adresse : {{mission.adressMission}} <br> - Acheter : {{mission.description}} <br> <br> <br> <button type="submit">Accepter</button> &nbsp;&nbsp;&nbsp; <button type="reset" (click)="AdresstoLongLAt(mission.adressMission)"   >Refuser</button></p>  
+    
+    </div>
+
+    
+      </div>
+      
+    </div>
+  
+
+    <div   *ngFor="let missions of mission" > 
+      <div (click)="AdresstoLongLAt(missions.adressMission)">
+      <h3  >HELLO</h3>
+    </div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+
