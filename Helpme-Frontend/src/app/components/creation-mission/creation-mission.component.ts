@@ -31,7 +31,6 @@ export class CreationMissionComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.btnadd();
   }
 
 
@@ -40,10 +39,10 @@ export class CreationMissionComponent implements OnInit {
     this.mission.PostMission(this.missionInstance)
     .subscribe( data => {
       alert("Mission Ajouté ");
-      return data;
+      return this.missionInstance=data;
     },
     (err)=>{
-      console.log(err);
+     
     }
     );
     

@@ -17,12 +17,12 @@ export class MapComponent implements OnInit  {
 
 
 
-
+public test:Object;
 
 
   map:mapboxgl.Map;
   public mission :any= [];
-  public longlat:any=[];
+  public longlat:any={};
 
 
   lat:any=2.331685;
@@ -41,18 +41,22 @@ export class MapComponent implements OnInit  {
   
 
   constructor(public RestMission : MissionService ) {
+
+
    }
 
   ngOnInit(): void {
 
     this.getMission();
   
+   
     this.AdresstoLongLAt(this.m);
     
   
   }
 
   
+ 
 
   getMission() {
 
@@ -62,12 +66,15 @@ export class MapComponent implements OnInit  {
 
         this.mission=data;
         
+        
+        
           console.log(data);
-         
+       
         },
 
     );
    
+    
   }
 
 
@@ -78,12 +85,19 @@ AdresstoLongLAt(m){
   this.RestMission.getLongLat(m).subscribe(
     data =>{
 
+      
       this.longlat=data;
 
-      this.longlat= Array.of(this.longlat);
-      console.log(data);
-      
 
+      this.longlat= Array.of(this.longlat);
+
+      this.longlat.forEach(function (value) {
+       
+    });
+      
+      console.log(this.longlat);
+     
+    
       },
 
   );

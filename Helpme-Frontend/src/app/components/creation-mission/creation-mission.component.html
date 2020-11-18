@@ -1,40 +1,29 @@
 <div style="text-align: center;"><h1>Bonjour {{prenom}}, besoin d'aide ? Ça n'a jamais été aussi facile </h1></div><br>
 
-<form action="">
-    <div>
-        <label for="">Prenom</label>
-        <input type="text"  name="prenom2">
-    </div>
-    <div>
-        <label for="">Nom</label>
-        <input type="text"  name="nom2">
-    </div>
-    <div>
+<form name="form">
+  <div>
         <label for="">Adresse</label>
-        <input type="text"  name="adresse">
+        <input type="text"  name="adresse" [(ngModel)]="missionInstance.adressMission">
     </div>
     <div>
         <label for="">Type de mission</label>
-        <input type="text"  name="typemission">
+        <input type="text"  name="typemission" [(ngModel)]="missionInstance.nomMission">
     </div>
     <div>
         <label for="">Date et heure</label>
-        <input type="datetime-local"  name="date">
+        <input type="date"  name="date" [(ngModel)]="missionInstance.dateMission" >
     </div>
     <div>
         <label for="">Téléphone</label>
-        <input type="tel"  name="telephone" pattern="^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$">
+        <input type="tel"  name="telephone" pattern="^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$"  [(ngModel)]="missionInstance.tel">
     </div>
-    <div>
-        <label for="">Email</label>
-        <input type="email" name="email">
-    </div>
+   
     <div>
         <label for="">Description</label>
-        <textarea  name="description"></textarea>
+        <textarea  name="description" [(ngModel)]="missionInstance.description"></textarea>
     </div>
     <div style="text-align: center;">
         <button type="reset">Réinitialiser</button>
-        <button type="submit"> Envoyer</button>
+        <button type="submit" (click)="btnadd()"> Envoyer</button>
     </div>
 </form>

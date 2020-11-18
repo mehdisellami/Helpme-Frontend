@@ -1,8 +1,8 @@
 export class Mission{
 
-    nomMission:any
-    adressMission:any
-    dateMission:any
-    description:any
-    etatmission:any
+    nomMission:String
+    adressMission:String
+    dateMission:Date
+    description:String
+    tel:String
 }
