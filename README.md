@@ -1,3 +1,4 @@
+[![Build Status](https://img.shields.io/travis/pascalpoizat/template-java-project/master.svg?style=flat-square)](https://travis-ci.org/github/mehdisellami/Helpme-Frontend)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=mehdisellami_Helpme-Frontend&metric=code_smells)](https://sonarcloud.io/dashboard?id=mehdisellami_Helpme-Frontend)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=mehdisellami_Helpme-Frontend&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=mehdisellami_Helpme-Frontend)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=mehdisellami_Helpme-Frontend&metric=security_rating)](https://sonarcloud.io/dashboard?id=mehdisellami_Helpme-Frontend)
