@@ -5,5 +5,5 @@
  
   # Installation 
  - [Installer Git](https://git-scm.com/downloads)
- - [Installer STS] (https://spring.io/tools) 
- - [Install JDK 11] (https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+ - [Installer STS](https://spring.io/tools) 
+ - [Install JDK 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
