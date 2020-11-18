@@ -15,6 +15,38 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
 
+- [Installer Visual tudio Code](https://code.visualstudio.com/download)
+
+ - [Installer Git](https://git-scm.com/downloads)
+
+ ```
+ git clone git@github.com:mehdisellami/Helpme-Backend.git
+ ```
+
+ - [Installer Node.js](https://nodejs.org/en/download/s)
+
+ - Ouvrir le dossier du projet sur votre IDE
+
+
+ - Installer Angular
+
+ ```
+npm install @angular/cli
+ ```
+
+- Installer npm
+
+ ```
+npm install
+ ```
+
+- Executer le projet
+
+ ```
+ng serve --open
+ ```
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
