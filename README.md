@@ -15,7 +15,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
 
-- [Installer Visual tudio Code](https://code.visualstudio.com/download)
+- [Installer Visual Studio Code](https://code.visualstudio.com/download)
 
  - [Installer Git](https://git-scm.com/downloads)
 
