@@ -1,6 +1,6 @@
 # Helpme-Frontend
 
-*Badges à rajouuter*
+*Badges à rajouter*
 
 # Qui sommes-nous ?
  HelpMe est une application qui vous permet de chercher ou bien de créer des missions à destination de personnes à proximité de chez vous.
