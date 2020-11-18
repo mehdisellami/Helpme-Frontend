@@ -15,13 +15,15 @@ import { CreationMissionComponent } from './components/creation-mission/creation
 import { FormsModule } from '@angular/forms';
 import { RestService } from './service/rest.service';
 import { MissionService } from './service/mission.service';
+import { LoginuserComponent } from './loginuser/loginuser.component';
 
 @NgModule({
   declarations: [
     AppComponent,
   UserComponent,
     MapComponent,
-    CreationMissionComponent
+    CreationMissionComponent,
+    LoginuserComponent
 
   ],
   imports: [

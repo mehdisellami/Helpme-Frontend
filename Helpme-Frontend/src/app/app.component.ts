@@ -28,28 +28,9 @@ export class AppComponent implements OnInit {
 
 
 
-    this.getWelcomemessage();
 
   }
 
-
-  getWelcomemessage(){
-    this.restservice.getwelcomemessage().subscribe(
-      (data )=>{
-        this.msg=data;
-
-        console.log();
-
-        },
-
-
-    );
-
-
-
-
-
-  }
 
 
 }
