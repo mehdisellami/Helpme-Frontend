@@ -1,6 +1,7 @@
 # Helpme-Frontend
 
-*Badges à rajouter*
+[![Tag](https://img.shields.io/github/v/tag/mehdisellami/Helpme-Frontend)](build.gradle)
+[![Release](https://img.shields.io/github/v/release/mehdisellami/Helpme-Frontend)](build.gradle)
 
 # Qui sommes-nous ?
  HelpMe est une application qui vous permet de chercher ou bien de créer des missions à destination de personnes à proximité de chez vous.
