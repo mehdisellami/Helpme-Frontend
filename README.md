@@ -6,6 +6,8 @@
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=mehdisellami_Helpme-Frontend&metric=ncloc)](https://sonarcloud.io/dashboard?id=mehdisellami_Helpme-Frontend)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=mehdisellami_Helpme-Frontend&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=mehdisellami_Helpme-Frontend)
 
+# Qui sommes-nous ?
+ HelpMe est une application qui vous permet de chercher ou bien de créer des missions à destination de personnes à proximité de chez vous.
 
 # HelpmeFrontend
 
@@ -34,3 +36,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+L'application sera alors disponible à l'adresse [http://localhost:4200](http://localhost:4200). <br>
+
+## Plus informations
+Ce repository contient le Frontend de notre application. Le Backend se trouve à [cette adresse](https://github.com/mehdisellami/Helpme-Backend).
+
+# Auteurs
+* **Adja Ba** - [Github](https://github.com/adjarokhaya)
+* **Sellammi Mehdi** - [Github](https://github.com/mehdisellami)
+* **Sidate Alexis** - [Github](https://github.com/sidatealexis)
+* **Supreme Chelson** - [Github](https://github.com/SUPREMEchelson)
