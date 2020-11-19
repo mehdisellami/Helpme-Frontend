@@ -71,8 +71,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-L'application sera alors disponible à l'adresse [http://localhost:4200](http://localhost:4200). <br>
-
 ## Plus informations
 Ce repository contient le Frontend de notre application. Le Backend se trouve à [cette adresse](https://github.com/mehdisellami/Helpme-Backend).
 
