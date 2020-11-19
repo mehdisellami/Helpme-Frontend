@@ -1,0 +1,11 @@
+table {
+    margin: 0 auto;
+    width: 600px;
+    height: 200px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    position: center;
+    padding-top: 100px;
+  }
+  

@@ -1,33 +1,19 @@
-<div class="panel panel-primary">
-    <div class="panel-heading">
-      <h2>Mission</h2>
-    </div>
-    <div class="panel-body">
-  
-      <table   class="table table-striped">
-  
-        <thead >
-          <tr>
+
+
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
             <th>Nom Mission </th>
             <th>Date et Heure</th>
             <th>Adresse</th>
-            
-
-  
-          </tr>
-        </thead>
-        <tbody>
-  
-            <tr *ngFor="let x of mission">
-            <td>{{x.nomMission}}</td>
-            <td>{{x.dateMission}}</td>
-            <td>{{x.adressMission}}</td>
-           
-  
-            
-          </tr>
-        </tbody>
-      </table>
-  </div>
-
-  </div>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of mission">
+        <td>{{x.nomMission}}</td>
+        <td>{{x.dateMission}}</td>
+        <td>{{x.adressMission}}</td>
+        </tr>
+    </tbody>
+  </table>

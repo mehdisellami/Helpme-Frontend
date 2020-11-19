@@ -9,7 +9,7 @@ import { User } from './user.model';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  public mission:any={};
+  public mission:any=[];
 
   userInstance: User = new User();
 
