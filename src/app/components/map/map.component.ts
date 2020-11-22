@@ -4,6 +4,8 @@ import { MissionService } from 'src/app/service/mission.service';
 import * as mapboxgl from 'mapbox-gl'
 import { Mission } from '../creation-mission/mission.model';
 import { AppComponent } from 'src/app/app.component';
+import { logging } from 'protractor';
+import { htmlAstToRender3Ast } from '@angular/compiler/src/render3/r3_template_transform';
 
 
 
@@ -22,8 +24,10 @@ public test:Object;
 
   map:mapboxgl.Map;
   public mission :any= [];
-  public longlat:any={};
+  public longlat:any=[];
 
+  public x=0;
+ 
 
   lat:any=2.331685;
   long:any=48.8942747;
@@ -32,9 +36,11 @@ public test:Object;
 
   CheckedBx=false;
 
-  click(ev){
+  switchon(ev){
+    
     this.CheckedBx=true;
  }
+
 
 
  
@@ -48,11 +54,15 @@ public test:Object;
   ngOnInit(): void {
 
     this.getMission();
-  
-   
-    this.AdresstoLongLAt(this.m);
+
+    
+    
+    console.log(this.x);
     
   
+   
+    
+    
   }
 
   
@@ -87,11 +97,12 @@ AdresstoLongLAt(m){
 
       
       this.longlat=data;
-
+      this.x++;
 
       this.longlat= Array.of(this.longlat);
 
       this.longlat.forEach(function (value) {
+        
        
     });
       
