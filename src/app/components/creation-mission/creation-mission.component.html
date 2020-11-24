@@ -1,4 +1,4 @@
-<div style="text-align: center;"><h1>Bonjour {{prenom}}, besoin d'aide ? Ça n'a jamais été aussi facile </h1></div><br>
+<div style="text-align: center;"><h1>Bonjour Thomas, besoin d'aide ? Ça n'a jamais été aussi facile </h1></div><br>
 
 <form name="form">
   <div>
@@ -23,8 +23,9 @@
         <textarea  name="description" [(ngModel)]="missionInstance.description"></textarea>
     </div>
     <div style="text-align: center;">
-        <button type="reset">Réinitialiser</button>
-        <button type="submit" (click)="btnadd()"> Envoyer</button>
+        <button type="submit" class="btn btn-primary" (click)="btnadd()">Envoyer</button>
+        <button type="reset" class="btn btn-primary">Réinitialiser</button>
     </div>
 </form>
+
 

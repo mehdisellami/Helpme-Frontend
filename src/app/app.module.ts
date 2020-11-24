@@ -16,7 +16,9 @@ import { FormsModule } from '@angular/forms';
 import { RestService } from './service/rest.service';
 import { MissionService } from './service/mission.service';
 import { LoginuserComponent } from './loginuser/loginuser.component';
-import { CreateUserComponent } from './create-user/create-user.component';
+import { NewuserComponent } from './newuser/newuser.component';
+import { PassworduserComponent } from './passworduser/passworduser.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { CreateUserComponent } from './create-user/create-user.component';
     MapComponent,
     CreationMissionComponent,
     LoginuserComponent,
-    CreateUserComponent
+    NewuserComponent,
+    PassworduserComponent,
+    HomeComponent
 
   ],
   imports: [

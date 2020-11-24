@@ -9,3 +9,48 @@
 @import '~@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css';
 
 
+     
+
+html{
+    height:100%;
+    
+  }
+   
+  body{
+    height:100%;
+    position: relative;
+    
+  }
+  
+   
+  #wrap{
+    min-height:100%;
+    position: relative;
+  }
+   
+  #header{
+    position: relative;
+  }
+  #main{
+    position: relative;
+    padding-bottom: 28%;
+  }
+  footer{
+    height: 100px;
+    
+    position: absolute;
+    bottom: 0;
+    background-color: black;
+   
+  
+  }
+
+  .page-footer{
+    
+    
+    position: absolute;
+    bottom: 0;
+    background-color:rgba(128, 128, 128, 0.199);
+    width: 100%;
+    height: 250px;
+  }
