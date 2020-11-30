@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RestService } from '../service/rest.service';
+import { User } from './user.model';
 
 @Component({
   selector: 'app-newuser',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewuserComponent implements OnInit {
 
-  constructor() { }
+  userInstance: User = new User();
+
+  constructor(private userService:RestService) { }
 
   ngOnInit(): void {
   }
+
+
+
+  
+  btnaddUser():void{
+
+    this.userService.PostUser(this.userInstance)
+    .subscribe( data => {
+      alert("Utilisateur  Ajouté ");
+      return this.userInstance=data;
+    },
+    (err)=>{
+     
+    }
+    );
+    
+}
 
 }

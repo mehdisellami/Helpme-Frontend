@@ -1,4 +1,4 @@
-.nav-item , .navbar-brand {
+.nav-item , .navbar-brand  {
     
     font:  sans-serif;
     text-transform: uppercase;
@@ -9,6 +9,9 @@
     color: #FF0000;
  
     
+  }
+  .nav-item  :hover{
+    opacity: 0,5;
   }
 .nav-link {
   

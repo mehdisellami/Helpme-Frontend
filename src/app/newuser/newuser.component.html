@@ -15,24 +15,24 @@
   
       <!-- Login Form -->
       <form>
-        <input type="text" id="nom" class="fadeIn third" name="nom" placeholder="Nom & Prénom">
+        <input type="text" id="nom" class="fadeIn third" name="nom" placeholder="Nom & Prénom" [(ngModel)]="userInstance.name">
 
-        <input type="text" id="mail" class="fadeIn third" name="mail" placeholder="adresse mail">
+        <input type="text" id="mail" class="fadeIn third" name="mail" placeholder="adresse mail" [(ngModel)]="userInstance.email">
 
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="username">
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="username" [(ngModel)]="userInstance.username">
 
-        <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+        <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" [(ngModel)]="userInstance.password">
 
-        <input type="text" id="tel" class="fadeIn third" name="tel" placeholder="Télephone">
-
-        
-
-
+        <input type="text" id="tel" class="fadeIn third" name="Tel" placeholder="Télephone" [(ngModel)]="userInstance.tel">
 
         
 
 
-        <input type="submit" class="fadeIn fourth" value="Enregistrer">
+
+        
+
+
+        <input type="submit" class="fadeIn fourth" (click)=" btnaddUser()" value="Enregistrer">
   
 
       </form>
