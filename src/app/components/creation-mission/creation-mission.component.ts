@@ -23,11 +23,6 @@ export class CreationMissionComponent implements OnInit {
 
 
   constructor( private mission:MissionService) {
-  this.prenom = 'Alexis';
-  this.nom = 'Sidate';
-  this.prenom2=this.prenom;
-  this.nom2=this.nom;
-  this.description="Décrivez en détail votre demande";
    }
 
   ngOnInit(): void {
