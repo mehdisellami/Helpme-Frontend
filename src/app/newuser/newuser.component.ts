@@ -15,20 +15,15 @@ export class NewuserComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
-
   
   btnaddUser():void{
 
     this.userService.PostUser(this.userInstance)
     .subscribe( data => {
-      alert("Utilisateur  Ajouté ");
+      alert("Utilisateur ajouté");
       return this.userInstance=data;
     },
-    (err)=>{
-     
-    }
+    (err)=>{}
     );
     
 }
