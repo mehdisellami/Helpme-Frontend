@@ -1,6 +1,5 @@
-
 <div class="wrapper fadeInDown">
-    <div id="formContent">
+  <div id="formContent">
       <!-- Tabs Titles -->
   
       <!-- Icon -->
@@ -10,34 +9,25 @@
       </div>
      
       <div class="fadeIn first">
-       Bienvenue chez nous, nous sommes heureux de vous voir rejoindre notre communauté !
+       Bienvenue chez nous, nous sommes heureux de vous voir rejoindre notre communauté ! <br>
       </div>
   
       <!-- Login Form -->
       <form>
         <input type="text" id="nom" class="fadeIn third" name="nom" placeholder="Nom & Prénom" [(ngModel)]="userInstance.name">
-
-        <input type="text" id="mail" class="fadeIn third" name="mail" placeholder="adresse mail" [(ngModel)]="userInstance.email">
-
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="username" [(ngModel)]="userInstance.username">
-
-        <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" [(ngModel)]="userInstance.password">
-
-        <input type="text" id="tel" class="fadeIn third" name="Tel" placeholder="Télephone" [(ngModel)]="userInstance.tel">
-
-        
-
-
-
-        
-
-
+        <input type="text" id="mail" class="fadeIn third" name="mail" placeholder="Adresse email" [(ngModel)]="userInstance.email">
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Identifiant" [(ngModel)]="userInstance.username">
+        <input type="password" id="password" class="fadeIn third" name="password" placeholder="Mot de passe" [(ngModel)]="userInstance.password">
+        <input type="text" id="tel" class="fadeIn third" name="Tel" placeholder="Numéro de télephone" [(ngModel)]="userInstance.tel">  
         <input type="submit" class="fadeIn fourth" (click)=" btnaddUser()" value="Enregistrer">
   
 
       </form>
-  
-    
-  
-    </div>
+
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" routerLink="/login">Déjà inscrit ?</a>
+      </div>
+
   </div>
+</div>
