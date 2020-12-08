@@ -9,45 +9,44 @@ import { htmlAstToRender3Ast } from '@angular/compiler/src/render3/r3_template_t
 
 
 
-
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit  {
-
+  
 
 
 public test:Object;
 
 
-  map:mapboxgl.Map;
+  map:mapboxgl.Map ;
+
   public mission :any= [];
   public longlat:any=[];
+  public maposition:any=[];
+  public distanceTab:any=[];
 
-  public x=0;
+
+  public m:any;
+  public index=0;
+
+  public range :any;
  
-
-  lat:any=2.331685;
-  long:any=48.8942747;
-
-  m:any;
+  public up_forms:any;
 
   CheckedBx=false;
 
   switchon(ev){
     
     this.CheckedBx=true;
+
+
  }
 
 
-
- 
-  
-
   constructor(public RestMission : MissionService ) {
-
 
    }
 
@@ -55,18 +54,48 @@ public test:Object;
 
     this.getMission();
 
+    this.getPosition();
+
+
+
     
-    
-    console.log(this.x);
-    
-  
-   
-    
-    
+
   }
 
+  filter(){
+    this.range=(<HTMLInputElement> document.getElementById("range"))?.value ;
+
+  }
+
+   distance (lat1, lon1, lat2, lon2) : any {
+    var p = 0.017453292519943295;    // Math.PI / 180
+    var c = Math.cos;
+    var a = 0.5 - c((lat2 - lat1) * p)/2 + 
+            c(lat1 * p) * c(lat2 * p) * 
+            (1 - c((lon2 - lon1) * p))/2;
   
+   this.distanceTab.push(Math.round( 12742 * Math.asin(Math.sqrt(a)))); // 2 * R; R = 6371 km
+   
+  }
  
+  getPosition(): Promise<any>
+  {
+    return new Promise((resolve, reject) => {
+
+      navigator.geolocation.getCurrentPosition(resp => {
+
+          resolve({lng: resp.coords.longitude, lat: resp.coords.latitude});
+           this.maposition.push(resp.coords.longitude,resp.coords.latitude)
+
+          console.log(this.maposition);
+        },
+        err => {
+          reject(err);
+        });
+    });
+
+  }
+
 
   getMission() {
 
@@ -75,9 +104,7 @@ public test:Object;
       (data )=>{
 
         this.mission=data;
-        
-        
-        
+              
           console.log(data);
        
         },
@@ -91,28 +118,22 @@ public test:Object;
   
 AdresstoLongLAt(m){
 
+ for (let i in this.mission){
+
  
-  this.RestMission.getLongLat(m).subscribe(
+  this.RestMission.getLongLat(this.mission[i]?.adressMission).subscribe(
+    
     data =>{
 
-      
-      this.longlat=data;
-      this.x++;
-
-      this.longlat= Array.of(this.longlat);
-
-      this.longlat.forEach(function (value) {
+      this.longlat.push(data);
+      this.distance(this.longlat[i]?.features[0].center[1],this.longlat[i]?.features[0].center[0],this.maposition[1],this.maposition[0]);
         
-       
-    });
-      
-      console.log(this.longlat);
-     
-    
       },
-
+      
   );
 
+    }
+    console.log(this.longlat);
 
 }
 

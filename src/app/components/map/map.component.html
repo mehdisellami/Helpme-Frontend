@@ -8,7 +8,7 @@
           
           <input type="checkbox" class="custom-control-input"  id="customSwitches"    (click)="switchon($event)"  >
         
-          <label class="custom-control-label" for="customSwitches"  (click)="AdresstoLongLAt(this.mission[0].adressMission)"></label>
+          <label class="custom-control-label" for="customSwitches"  (click)="AdresstoLongLAt(this.mission)"></label>
         </div>
       </div>
       
@@ -19,54 +19,132 @@
 <div class="container" *ngIf="CheckedBx" >
     <div class="row">
       <div class="col-7">
-        <mgl-map [style]="'mapbox://styles/mapbox/streets-v9'"   [zoom]="[16.6]" > 
+        <div>
+          
+          <input type="text"  id="range" name="range" placeholder="Veuillez choisir votre Distance" >
+         &nbsp; &nbsp; &nbsp; <button type="button" class="btn btn-info" (click)="filter()">Filtrer !</button>
+
+        </div>
+        <hr>
+        <mgl-map [style]="'mapbox://styles/mapbox/streets-v9'"   [zoom]="[16.6]"   > 
          
       <!-- Bouttons de navigations -->
           <mgl-control mglNavigation  ></mgl-control>
               
           <!-- Localisation utilisateur -->
-                <mgl-control mglGeolocate [positionOptions]="{ enableHighAccuracy: true}" [trackUserLocation]="true"></mgl-control>
+                <mgl-control mglGeolocate [positionOptions]="{ enableHighAccuracy: true}" [trackUserLocation]="true"  ></mgl-control>
         
         <!-- point de la  mission -->
-  
-            <div *ngFor="let l of longlat">
-        <mgl-marker  #missionmarker [lngLat]="[l.features[0].center[0], l.features[0].center[1]]" >
 
-         
+       
+        
+  
+ 
+      <div *ngFor="let l of longlat ; let i = index "  >
+        <div *ngIf="this.distanceTab[i] <= this.range ;else other ">
+  
+        <mgl-marker #missionmarker [lngLat]="[l.features[0].center[0], l.features[0].center[1]]" >
+
         </mgl-marker>
 
-        <mgl-popup  [marker]="missionmarker" >
-          
-            
 
-             
-             {{mission[x-1].nomMission}}  ,
-              {{mission[x-1].adressMission}}
-            
-          
-      
-      </mgl-popup>
-
-   
-      </div>
-
-     
-
-        <!-- Popup mission dans la map -->
 
         
+       
+    
+<!-- Popup mission dans la map -->
+          <mgl-popup  [marker]="missionmarker" >
+           
+                
+              {{mission[i].nomMission}}  ,
+                {{mission[i].adressMission}}
+           
+        </mgl-popup>
 
+   
+        
+      </div>
+
+      <div *ngIf="this.distanceTab[i] < 2 ;else other ">
+  
+        <mgl-marker #missionmarker [lngLat]="[l.features[0].center[0], l.features[0].center[1]]" >
+
+        </mgl-marker>
+
+        
+       
+    
+<!-- Popup mission dans la map -->
+          <mgl-popup  [marker]="missionmarker" >
+           
+                
+              {{mission[i].nomMission}}  ,
+                {{mission[i].adressMission}}
+           
+        </mgl-popup>
+
+   
+        
+      </div>
+    </div>
+
+   
+    
+
+        
+        
 
 
 
         </mgl-map>
+
     </div>
       
-    <div class="col-4"  >
+    <div class="col-4" >
       
-      <p style="text-align:center" class="bordure"> Mission : <br> Date Mission :  - {{this.mission[x-1]?.dateMission}} <br> - Adresse : {{this.mission[x-1]?.adressMission}} <br> - Acheter : {{this.mission[x-1]?.description}} <br> <br> <br> 
+      <!-- <p style="text-align:center" class="bordure"> Mission : <br> Date Mission :  - {{this.mission[x-1]?.dateMission}} <br> - Adresse : {{this.mission[x-1]?.adressMission}} <br> - Acheter : {{this.mission[x-1]?.description}} <br> <br> <br> 
         <button type="button" class="btn btn-success"type="submit">Accepter</button> &nbsp;&nbsp;&nbsp;
-         <button type="button" class="btn btn-danger" type="reset" (click)="AdresstoLongLAt(this.mission[x].adressMission)"   >Refuser</button></p>  
+         <button type="button" class="btn btn-danger" type="reset"    >Refuser</button></p>   -->
+
+         <table class="table table-bordered">
+          <thead>
+            <tr>
+                  <th>Nom Mission </th>
+                  <th>Description </th>
+                  <th>Date et Heure</th>
+                  <th>Adresse</th>
+                  <th>Distance</th>
+                  <th>Accepter?</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let x of distanceTab ; let i=index">
+            <tr *ngIf="this.distanceTab[i] <= this.range && this.distanceTab[i] > 2  "  >
+              
+             
+              <td>{{mission[i].nomMission}}</td>
+              <td>{{mission[i].description}}</td>
+              <td>{{mission[i].dateMission}}</td>
+              <td >{{this.longlat[i]?.features[0]?.place_name}}</td>
+              <td>{{x}} KM</td>
+             <td><button type="button" class="btn btn-success"type="submit">Accepter</button> </td>
+           
+              </tr>
+
+              <tr *ngIf="this.distanceTab[i] < 2 ;else other "  >
+              
+             
+                <td>{{mission[i].nomMission}}</td>
+                <td>{{mission[i].description}}</td>
+                <td>{{mission[i].dateMission}}</td>
+                <td >{{this.longlat[i]?.features[0]?.place_name}}</td>
+                <td>{{x}} KM</td>
+               <td><button type="button" class="btn btn-success"type="submit">Accepter</button> </td>
+             
+                </tr>
+            
+          </tbody>
+
+        </table>
     
     </div>
 
@@ -76,17 +154,19 @@
     </div>
   
 
-      
-    
-      <!-- <h3   (click)="AdresstoLongLAt(this.mission[x].adressMission)"  >HELLO</h3> -->
-      
    
+      
+
+   
+ 
   
     
-  
+   
+
+
 
   
-    
+      
     
 
 
