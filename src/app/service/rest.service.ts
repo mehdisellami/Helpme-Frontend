@@ -12,12 +12,12 @@ import { User } from '../newuser/user.model';
   providedIn: 'any'})
 export class RestService {
 
-  public url="http://localhost:5001/test";
+  public url="https://helpmebackend.herokuapp.com/test";
 
 
-  public urlpostuser="http://localhost:5001/newuser";
+  public urlpostuser="https://helpmebackend.herokuapp.com/newuser";
 
-  public urlgetuser="http://localhost:5001/listeUser";
+  public urlgetuser="https://helpmebackend.herokuapp.com/listeUser";
 
 
  
