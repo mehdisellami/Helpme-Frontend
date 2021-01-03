@@ -9,7 +9,8 @@ Le code source est également disponible pour le front end [ici](https://github.
 ## Features
 * Affichage d'une carte utilisant l'Api MapBox
 * Localisation de la position de l'utilisateur
-* Affichage de pointeurs de missions sur la carte dans un rayon choisi par l'utilisateur
+* Afficher les missions dans un rayon défini autour de l'utilisateur
+* Accepter une mission
 * Afficher l'ensemble des missions
 * Créer une nouvelle mission
 
