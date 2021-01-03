@@ -19,6 +19,8 @@ import { LoginuserComponent } from './loginuser/loginuser.component';
 import { NewuserComponent } from './newuser/newuser.component';
 import { PassworduserComponent } from './passworduser/passworduser.component';
 import { HomeComponent } from './home/home.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
