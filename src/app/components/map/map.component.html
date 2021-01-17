@@ -26,10 +26,12 @@
 
         </div>
         <hr>
-        <mgl-map [style]="'mapbox://styles/mapbox/streets-v9'"   [zoom]="[16.6]"   > 
+        <mgl-map [style]="'mapbox://styles/mapbox/streets-v11'"   [zoom]="[16.6]"    > 
          
       <!-- Bouttons de navigations -->
           <mgl-control mglNavigation  ></mgl-control>
+
+
               
           <!-- Localisation utilisateur -->
                 <mgl-control mglGeolocate [positionOptions]="{ enableHighAccuracy: true}" [trackUserLocation]="true"  ></mgl-control>
@@ -160,6 +162,7 @@
 
    
       
+
 
    
  

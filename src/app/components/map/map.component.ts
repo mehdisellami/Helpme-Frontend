@@ -21,7 +21,9 @@ export class MapComponent implements OnInit  {
 public test:Object;
 
 
-  map:mapboxgl.Map ;
+ 
+
+
 
   public mission :any= [];
   public longlat:any=[];
@@ -57,8 +59,8 @@ public test:Object;
     this.getPosition();
 
 
+  
 
-    
 
   }
 
@@ -136,6 +138,7 @@ AdresstoLongLAt(m){
     console.log(this.longlat);
 
 }
+
 
 
 

@@ -20,6 +20,7 @@ import { NewuserComponent } from './newuser/newuser.component';
 import { PassworduserComponent } from './passworduser/passworduser.component';
 import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { httpInterceptorProviders } from './auth/auth-interceptor';
 
 
 @NgModule({
@@ -55,7 +56,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
   ],
-  providers: [RestService,MissionService],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

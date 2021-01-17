@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'register', component: NewuserComponent},
   { path: 'lostpassword', component: PassworduserComponent},
   { path: 'home', component: HomeComponent},
-  { path: 'app-creation-user', component: UserComponent}
+  { path: 'app-creation-user', component: UserComponent} 
 ];
 
 @NgModule({

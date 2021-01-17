@@ -1,3 +1,5 @@
+
+
 <div class="wrapper fadeInDown">
     <div id="formContent">
       <!-- Tabs Titles -->
@@ -7,12 +9,38 @@
         <img src="../assets/img/logo3.jpg" id="icon" alt="User Icon" />
       </div>
   
+      <div *ngIf="isLoggedIn">
+        Vous êtes connecté en tant que {{usernameForm}}
+      </div>
+      
       <!-- Login Form -->
-      <form>
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Identifiant">
-        <input type="password" id="password" class="fadeIn third" name="login" placeholder="Mot de passe">
-        <input type="submit" class="fadeIn fourth" value="Log In">
+      <div div *ngIf="isLoggedIn==false" >
+      <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel"
+            required />
+          <div *ngIf="f.submitted && username.invalid">
+            <div *ngIf="username.errors.required">Username is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"
+            required minlength="6" />
+          <div *ngIf="f.submitted && password.invalid">
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary">Login</button>
+          <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
+            Login failed: {{errorMessage}}
+          </div>
+        </div>
       </form>
+    </div>
   
       <!-- Remind Passowrd -->
       <div id="formFooter">
