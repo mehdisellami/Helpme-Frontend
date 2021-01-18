@@ -17,7 +17,9 @@ export class RestService {
     
   }
   getwelcomemessage(){
+
     return this.http.get<String>(this.url);
+    
   }
 
   PostUser(user){
