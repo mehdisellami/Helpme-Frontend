@@ -8,7 +8,6 @@ import { HomeComponent } from './home/home.component';
 import { LoginuserComponent } from './loginuser/loginuser.component';
 import { NewuserComponent } from './newuser/newuser.component';
 import { PassworduserComponent } from './passworduser/passworduser.component';
-import { UserComponent } from './user/user.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MissionsComponent } from './missions/missions.component';
 
@@ -25,7 +24,6 @@ const routes: Routes = [
   { path: 'register', component: NewuserComponent},
   { path: 'lostpassword', component: PassworduserComponent},
   { path: 'home', component: HomeComponent},
-  { path: 'app-creation-user', component: UserComponent},
   { path: 'app-profile', component: ProfileComponent},
   { path: 'app-missions', component: MissionsComponent}
 ];
