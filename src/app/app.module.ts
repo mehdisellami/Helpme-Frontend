@@ -55,7 +55,7 @@ import { MissionsComponent } from './missions/missions.component';
 
 
   ],
-  providers: [RestService,MissionService],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
