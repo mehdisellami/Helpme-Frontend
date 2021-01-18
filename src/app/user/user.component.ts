@@ -50,5 +50,20 @@ export class UserComponent implements OnInit {
     );
   }
 
+  delmission(id):void{
+    this.missionservice.DeleteMission(id)
+    .subscribe( data => {
+      alert("Mission " + id + " supprimée");
+      this.reloadPage(); 
+    },
+    (err)=>{
+    }
+    );  
+}
+
+reloadPage() {
+  window.location.reload();
+}
+
 
 }

@@ -20,7 +20,6 @@
     "@agm/snazzy-info-window": "^3.0.0-beta.0",
     "@angular-devkit/build-angular": "^0.1002.0",
     "@angular/animations": "~10.1.4",
-    "@angular/cli": "^10.1.7",
     "@angular/common": "^10.1.6",
     "@angular/compiler": "^10.1.4",
     "@angular/compiler-cli": "^10.1.4",
@@ -48,7 +47,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.1002.0",
-    "@angular/cli": "^10.1.7",
+    "@angular/cli": "^10.2.1",
     "@angular/compiler-cli": "^10.1.4",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
