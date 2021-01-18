@@ -16,18 +16,15 @@ export class MissionsComponent implements OnInit {
   constructor(public missionservice :MissionService , public restservice : RestService) { }
 
   ngOnInit(): void {
-    this.getUser();
+    this.getMission();
   }
 
-  getUser(){
+  getMission(){
     this.missionservice.GetMission().subscribe(
       (data )=>{
         this.mission=data;
-
         console.log(this.mission);
-
         },
-
     );
   }
 
