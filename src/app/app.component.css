@@ -10,24 +10,20 @@
  
     
   }
+
   .nav-item  :hover{
     opacity: 0,5;
   }
+
 .nav-link {
-  
- 
 }
 
 .body{
-   
-    
 }
 
 .navbar-nav{
   text-align: center;
   padding-left: 100px;
-
-  
 }
 
 
@@ -53,11 +49,7 @@
 
   
 nav{
- 
-
-
   background: linear-gradient(rgba(153, 150, 150, 0.616), rgba(230, 226, 226, 0.822));
-	
 	-webkit-background-size: cover;
 	background-size: cover;
 	background-position: center center;
