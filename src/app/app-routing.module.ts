@@ -9,8 +9,10 @@ import { LoginuserComponent } from './loginuser/loginuser.component';
 import { NewuserComponent } from './newuser/newuser.component';
 import { PassworduserComponent } from './passworduser/passworduser.component';
 import { UserComponent } from './user/user.component';
+import { ProfileComponent } from './profile/profile.component';
 
-const routes: Routes = [ 
+
+const routes: Routes = [
   {
     path: '',
     redirectTo: '/home',
@@ -22,7 +24,8 @@ const routes: Routes = [
   { path: 'register', component: NewuserComponent},
   { path: 'lostpassword', component: PassworduserComponent},
   { path: 'home', component: HomeComponent},
-  { path: 'app-creation-user', component: UserComponent}
+  { path: 'app-creation-user', component: UserComponent},
+  { path: 'app-profile', component: ProfileComponent}
 ];
 
 @NgModule({

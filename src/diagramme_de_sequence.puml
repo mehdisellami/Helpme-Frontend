@@ -1,0 +1,36 @@
+@startuml projetHelpMe
+
+participant "Helpme-Frontend" as Frontend
+Participant "components.creation-mission" as creationmission
+Participant "components.map" as map
+participant "HelpmeBackend" as Backend
+participant "controleur" as controleur
+
+[-> Frontend : GET /creer-app-mission
+activate Frontend
+Frontend -> creationmission
+activate creationmission
+creationmission -> creationmission : creation-mission.component.ts
+creationmission --> Frontend
+deactivate creationmission
+Frontend -> Backend: controleur:AddNewMission()
+activate Backend
+Backend -> controleur
+activate controleur
+controleur ->controleur:AddNewMission()
+controleur --> Backend
+deactivate controleur
+Backend --> Frontend: Nouvelles mission
+deactivate Backend
+[<-- Frontend: Afficher la liste des mission
+deactivate Frontend
+
+[-> Frontend: Get /app-map
+activate Frontend
+Frontend -> map
+activate map
+map -> map: La carte
+map --> Frontend
+deactivate map
+
+@enduml

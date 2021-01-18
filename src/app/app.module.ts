@@ -19,6 +19,7 @@ import { LoginuserComponent } from './loginuser/loginuser.component';
 import { NewuserComponent } from './newuser/newuser.component';
 import { PassworduserComponent } from './passworduser/passworduser.component';
 import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HomeComponent } from './home/home.component';
     LoginuserComponent,
     NewuserComponent,
     PassworduserComponent,
-    HomeComponent
+    HomeComponent,
+    ProfileComponent
 
   ],
   imports: [
