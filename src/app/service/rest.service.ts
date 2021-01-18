@@ -15,7 +15,7 @@ export class RestService {
   public url="https://helpmebackend.herokuapp.com/test";
 
 
-  public urlpostuser="https://helpmebackend.herokuapp.com/newuser";
+  public urlpostuser="https://helpmebackend.herokuapp.com/singup";
 
   public urlgetuser="https://helpmebackend.herokuapp.com/listeUser";
 
