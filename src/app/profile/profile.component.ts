@@ -32,18 +32,14 @@ export class ProfileComponent implements OnInit {
     );
   }
 
-    /*
-
   getMission(){
-      this.missionservice.GetMission().subscribe(
-        (data )=>{
-          this.mission=data;
-
-          console.log(this.mission);
-
-        }
-  }*/
-
+    this.missionservice.GetMission().subscribe(
+      (data )=>{
+        this.mission=data;
+        console.log(this.mission);
+      },
+    );
+  }
 }
 
 
