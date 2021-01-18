@@ -19,7 +19,9 @@
         <input type="text" id="login" class="fadeIn second" name="login" placeholder="Identifiant" [(ngModel)]="userInstance.username">
         <input type="password" id="password" class="fadeIn third" name="password" placeholder="Mot de passe" [(ngModel)]="userInstance.password">
         <input type="text" id="tel" class="fadeIn third" name="Tel" placeholder="Numéro de télephone" [(ngModel)]="userInstance.tel">  
-        <input type="submit" class="fadeIn fourth" (click)=" btnaddUser()" value="Enregistrer">
+        <input type="submit" class="fadeIn fourth" (click)=" onSubmit()" value="Enregistrer">
+        
+
       </form>
 
       <!-- Remind Passowrd -->

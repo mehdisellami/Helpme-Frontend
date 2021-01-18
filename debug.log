@@ -6,3 +6,7 @@
 [0116/232554.986:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
 [0117/182436.084:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
 [0118/170855.500:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+[0118/172811.197:ERROR:process_info.cc(359)] UncheckedAllocate
+[0118/172811.274:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Chelson SuprÃªme\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\038ed7a5-3181-4409-b448-2415434eeb4b: Le chemin d’accès spécifié est introuvable. (0x3)
+[0118/172811.339:ERROR:process_info.cc(359)] UncheckedAllocate
+[0118/174134.760:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)

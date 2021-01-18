@@ -11,9 +11,9 @@ import { map } from 'rxjs/operators';
 )
 export class MissionService {
 
-  public urlpostmission="http://localhost:5001/newmission";
+  public urlpostmission="https://helpmebackend.herokuapp.com/newmission";
 
-  public urlgetmission="http://localhost:5001/listeMission";
+  public urlgetmission="https://helpmebackend.herokuapp.com/listeMission";
 
   public longlat:any=[]; 
 
@@ -33,19 +33,19 @@ export class MissionService {
 
   }
 
-  getLongLat(adr) {
-    
-    return this.http.get ("https://api.mapbox.com/geocoding/v5/mapbox.places/"+adr+".json?types=address&access_token=pk.eyJ1IjoibWVoZGlzZWxsYW1pIiwiYSI6ImNrZ2t5bnQ3cTA2NDAyeW8xMzBoanVnMm8ifQ.UuXfzm__C3HRsGXfAktk3w")
-    ;
-    
-    
-    
-    }
+  DeleteMission(idmission){
 
-
-
+    return this.http.delete("https://helpmebackend.herokuapp.com/deletemission/" + idmission);
 
   }
+
+  getLongLat(adr) {
+    
+    return this.http.get ("https://api.mapbox.com/geocoding/v5/mapbox.places/"+adr+".json?proximity=-122.3995752,37.7881856&access_token=pk.eyJ1IjoibWVoZGlzZWxsYW1pIiwiYSI6ImNrZ2t5bnQ3cTA2NDAyeW8xMzBoanVnMm8ifQ.UuXfzm__C3HRsGXfAktk3w")
+    ;
+
+  }
+}
 
 
 
