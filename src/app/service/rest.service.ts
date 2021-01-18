@@ -9,12 +9,7 @@ export class RestService {
 
   public url="https://helpmebackend.herokuapp.com/test";
 
-<<<<<<< HEAD
-
-  public urlpostuser="https://helpmebackend.herokuapp.com/singup";
-=======
-  public urlpostuser="https://helpmebackend.herokuapp.com/newuser";
->>>>>>> 6a592a56bb9feaf2a125baad451c5e685651b0b9
+  public urlpostuser="https://helpmebackend.herokuapp.com/api/auth/singup";
 
   public urlgetuser="https://helpmebackend.herokuapp.com/listeUser";
  
