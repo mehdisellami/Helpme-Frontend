@@ -3,32 +3,22 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../newuser/user.model';
 
-
-
-
-
-
 @Injectable({
   providedIn: 'any'})
 export class RestService {
 
   public url="https://helpmebackend.herokuapp.com/test";
 
-
   public urlpostuser="https://helpmebackend.herokuapp.com/newuser";
 
   public urlgetuser="https://helpmebackend.herokuapp.com/listeUser";
-
-
  
-
   constructor(private http: HttpClient) {
     
   }
   getwelcomemessage(){
     return this.http.get<String>(this.url);
   }
-
 
   PostUser(user){
 
@@ -41,5 +31,4 @@ export class RestService {
     return this.http.get<User>(this.urlgetuser);
 
   }
-
 }
