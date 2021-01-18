@@ -45,6 +45,13 @@ export class MissionService {
     ;
 
   }
+
+  apiDrivingMapbox(lngA,latA,lngB,latB) {
+    
+    return this.http.get ("https://api.mapbox.com/directions/v5/mapbox/walking/"+lngA+","+latA+";"+lngB+","+latB+"?approaches=unrestricted;curb&access_token=pk.eyJ1IjoibWVoZGlzZWxsYW1pIiwiYSI6ImNrZ2t5bnQ3cTA2NDAyeW8xMzBoanVnMm8ifQ.UuXfzm__C3HRsGXfAktk3w")
+    ;
+
+  }
 }
 
 

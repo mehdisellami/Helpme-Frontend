@@ -26,6 +26,8 @@ public test:Object;
 
 
   public mission :any= [];
+
+  public apiMaboxDriving :any= [];
   public longlat:any=[];
   public maposition:any=[];
   public distanceTab:any=[];
@@ -57,6 +59,8 @@ public test:Object;
     this.getMission();
 
     this.getPosition();
+
+
 
 
   
@@ -129,7 +133,7 @@ AdresstoLongLAt(m){
 
       this.longlat.push(data);
       this.distance(this.longlat[i]?.features[0].center[1],this.longlat[i]?.features[0].center[0],this.maposition[1],this.maposition[0]);
-        
+      console.log(this.apiDrivingMapbox(this.maposition[0],this.maposition[1],this.longlat[i]?.features[0].center[0],this.longlat[i]?.features[0].center[1]));
       },
       
   );
@@ -140,6 +144,22 @@ AdresstoLongLAt(m){
 }
 
 
+apiDrivingMapbox(lnga,lata,lngb,latb) {
+
+  this.RestMission.apiDrivingMapbox(lnga,lata,lngb,latb).subscribe(
+
+     (data )=>{
+
+       this.apiMaboxDriving=data;
+             
+         console.log(data);
+      
+       },
+
+   );
+  
+   
+ }
 
 
 
