@@ -3,13 +3,12 @@ import { User } from '../newuser/user.model';
 import { MissionService } from '../service/mission.service';
 import { RestService } from '../service/rest.service';
 
-
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  selector: 'app-missions',
+  templateUrl: './missions.component.html',
+  styleUrls: ['./missions.component.css']
 })
-export class UserComponent implements OnInit {
+export class MissionsComponent implements OnInit {
   public mission:any=[];
 
   userInstance: User = new User();
@@ -17,36 +16,15 @@ export class UserComponent implements OnInit {
   constructor(public missionservice :MissionService , public restservice : RestService) { }
 
   ngOnInit(): void {
-
-   
-    this.getUser();
-
+    this.getMission();
   }
 
-
-  btnadd():void{
-
-    this.restservice.PostUser(this.userInstance)
-    .subscribe( data => {
-      alert("utilisateur Ajouté ");
-      return data;
-    },
-    (err)=>{
-    }
-    );
-    
-  }
-
-
-  getUser(){
+  getMission(){
     this.missionservice.GetMission().subscribe(
       (data )=>{
         this.mission=data;
-
         console.log(this.mission);
-
         },
-
     );
   }
 
@@ -64,6 +42,5 @@ export class UserComponent implements OnInit {
 reloadPage() {
   window.location.reload();
 }
-
 
 }

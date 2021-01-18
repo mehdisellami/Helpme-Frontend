@@ -10,7 +10,6 @@ import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { MapComponent } from './components/map/map.component';
 import { RouterModule } from '@angular/router';
-import { UserComponent } from './user/user.component';
 import { CreationMissionComponent } from './components/creation-mission/creation-mission.component';
 import { FormsModule } from '@angular/forms';
 import { RestService } from './service/rest.service';
@@ -19,25 +18,25 @@ import { LoginuserComponent } from './loginuser/loginuser.component';
 import { NewuserComponent } from './newuser/newuser.component';
 import { PassworduserComponent } from './passworduser/passworduser.component';
 import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { httpInterceptorProviders } from './auth/auth-interceptor';
-
-
+import { MissionsComponent } from './missions/missions.component';
 @NgModule({
   declarations: [
     AppComponent,
-  UserComponent,
     MapComponent,
     CreationMissionComponent,
     LoginuserComponent,
     NewuserComponent,
     PassworduserComponent,
-    HomeComponent
+    HomeComponent,
+    ProfileComponent,
+    MissionsComponent
 
   ],
   imports: [
     BrowserModule,
-    FontAwesomeModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
@@ -56,7 +55,7 @@ import { httpInterceptorProviders } from './auth/auth-interceptor';
 
 
   ],
-  providers: [httpInterceptorProviders],
+  providers: [RestService,MissionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
