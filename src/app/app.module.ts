@@ -14,14 +14,15 @@ import { CreationMissionComponent } from './components/creation-mission/creation
 import { FormsModule } from '@angular/forms';
 import { RestService } from './service/rest.service';
 import { MissionService } from './service/mission.service';
-import { LoginuserComponent } from './loginuser/loginuser.component';
-import { NewuserComponent } from './newuser/newuser.component';
-import { PassworduserComponent } from './passworduser/passworduser.component';
-import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
+import { LoginuserComponent } from './components/loginuser/loginuser.component';
+import { NewuserComponent } from './components/newuser/newuser.component';
+import { PassworduserComponent } from './components/passworduser/passworduser.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { httpInterceptorProviders } from './auth/auth-interceptor';
-import { MissionsComponent } from './missions/missions.component';
+import { MissionsComponent } from './components/missions/missions.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,6 @@ import { MissionsComponent } from './missions/missions.component';
     HomeComponent,
     ProfileComponent,
     MissionsComponent
-
   ],
   imports: [
     BrowserModule,
@@ -44,15 +44,11 @@ import { MissionsComponent } from './missions/missions.component';
       apiKey: 'AIzaSyAlBfKBkOraEGnmbifa35uLfKLqtydDumc'
     }),
 
-
     AgmSnazzyInfoWindowModule,
-
     NgxMapboxGLModule.withConfig({
       accessToken: 'pk.eyJ1IjoibWVoZGlzZWxsYW1pIiwiYSI6ImNrZ2t5bnQ3cTA2NDAyeW8xMzBoanVnMm8ifQ.UuXfzm__C3HRsGXfAktk3w', // Optional, can also be set per map (accessToken input of mgl-map)
       geocoderAccessToken: 'pk.eyJ1IjoibWVoZGlzZWxsYW1pIiwiYSI6ImNrZ2t5bnQ3cTA2NDAyeW8xMzBoanVnMm8ifQ.UuXfzm__C3HRsGXfAktk3w'
     }),
-
-
 
   ],
   providers: [httpInterceptorProviders],

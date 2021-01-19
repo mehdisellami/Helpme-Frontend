@@ -1,27 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
-
-
 @import url('../node_modules/font-awesome/css/font-awesome.min.css');
 
 @import '~mapbox-gl/dist/mapbox-gl.css';
 @import '~@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css';
 
-
-     
-
 html{
     height:100%;
-    
-  }
+}
    
   body{
     height:100%;
     position: relative;
-    
-  }
-  
+  } 
    
   #wrap{
     min-height:100%;
@@ -37,17 +29,12 @@ html{
   }
   footer{
     height: 100px;
-    
     position: absolute;
     bottom: 0;
-    background-color: black;
-   
-  
+    background-color: black; 
   }
 
   .page-footer{
-    
-    
     position: absolute;
     bottom: 0;
     background-color:rgba(128, 128, 128, 0.199);
@@ -59,7 +46,6 @@ html{
     color: white;
   }
   
-
   .fa {
     padding: 20px;
     font-size: 17px;
@@ -68,6 +54,3 @@ html{
     text-decoration: none;
     border-radius: 50%;
   }
-
-
-  

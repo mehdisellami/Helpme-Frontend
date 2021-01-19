@@ -1,163 +1,85 @@
+<br>
 <div class="container">
     <div class="row">
-      <div class="col-8 ">
-        <h3>Bonjour ! Prêt pour vos prochaines missions ?  </h3> 
-      </div>
+      <div class="col-8 "><h3>Prêt pour vos prochaines missions ? </h3> </div>
       <div class="col-4  ">
         <div class="custom-control custom-switch"     >
-          
-          <input type="checkbox" class="custom-control-input"  id="customSwitches"    (click)="switchon($event)"  >
-        
+          <input type="checkbox" class="custom-control-input" id="customSwitches" (click)="switchon($event)">
           <label class="custom-control-label" for="customSwitches"  (click)="AdresstoLongLAt(this.mission)"></label>
         </div>
       </div>
-      
     </div>
-  </div>
+</div>
 
 <br>
 <div class="container" *ngIf="CheckedBx" >
-    <div class="row">
-      <div class="col-7 ">
-        <div>
-          
-          <input type="text"  id="range" name="range" placeholder="Veuillez choisir votre Distance" >
-         &nbsp; &nbsp; &nbsp; <button type="button" class="btn btn-info" (click)="filter()">Filtrer !</button>
-
-        </div>
-        <hr>
-        <mgl-map [style]="'mapbox://styles/mapbox/streets-v11'"   [zoom]="[16.6]"    > 
-         
-      <!-- Bouttons de navigations -->
-          <mgl-control mglNavigation  ></mgl-control>
-
-
-              
-          <!-- Localisation utilisateur -->
-                <mgl-control mglGeolocate [positionOptions]="{ enableHighAccuracy: true}" [trackUserLocation]="true"  ></mgl-control>
+  <div class="row">
+    <div class="col-7 ">
+      <div>
+        <input type="text"  id="range" name="range" placeholder="Entrez une distance" >
+        &nbsp; &nbsp; &nbsp; <button type="button" class="btn btn-info" (click)="filter()">Filtrer !</button>
+      </div>
+      <hr>
+      <mgl-map [style]="'mapbox://styles/mapbox/streets-v11'"   [zoom]="[16.6]"    > 
+        <!-- Bouttons de navigations -->
+        <mgl-control mglNavigation  ></mgl-control>
         
+        <!-- Localisation utilisateur -->
+        <mgl-control mglGeolocate [positionOptions]="{ enableHighAccuracy: true}" [trackUserLocation]="true"  ></mgl-control>
+            
         <!-- point de la  mission -->
-
-       
+        <div *ngFor="let l of longlat ; let i = index "  >
+          <div *ngIf="this.distanceTab[i] <= this.range ;else other ">
+            <mgl-marker #missionmarker [lngLat]="[l.features[0].center[0], l.features[0].center[1]]" > </mgl-marker>
         
-  
- 
-      <div *ngFor="let l of longlat ; let i = index "  >
-        <div *ngIf="this.distanceTab[i] <= this.range ;else other ">
-  
-        <mgl-marker #missionmarker [lngLat]="[l.features[0].center[0], l.features[0].center[1]]" >
-
-        </mgl-marker>
-
-
-
-
-        
-       
-    
-<!-- Popup mission dans la map -->
-          <mgl-popup  [marker]="missionmarker" >
-           
-                
-              {{mission[i].nomMission}}  ,
-                {{mission[i].adressMission}}
-           
-        </mgl-popup>
-
-
-   
-        
-      </div>
-
-      <div *ngIf="this.distanceTab[i] < 2 ;else other ">
-  
-        <mgl-marker #missionmarker [lngLat]="[l.features[0].center[0], l.features[0].center[1]]" >
-
-        </mgl-marker>
-
-        
-       
-    
-<!-- Popup mission dans la map -->
-          <mgl-popup  [marker]="missionmarker" >
-           
-                
-              {{mission[i].nomMission}}  ,
-                {{mission[i].adressMission}}
-           
-        </mgl-popup>
-
-        
-
-   
-        
-      </div>
-    </div>
-
-   
-    
-
-        
-        
-
-
-
-        </mgl-map>
-
+            <!-- Popup mission dans la map -->
+            <mgl-popup  [marker]="missionmarker" >{{mission[i].nomMission}},{{mission[i].adressMission}}</mgl-popup>
+          </div>
+          <div *ngIf="this.distanceTab[i] < 2 ;else other ">
+            <mgl-marker #missionmarker [lngLat]="[l.features[0].center[0], l.features[0].center[1]]" ></mgl-marker>
+              <!-- Popup mission dans la map -->
+              <mgl-popup  [marker]="missionmarker" >{{mission[i].nomMission}},{{mission[i].adressMission}}</mgl-popup>
+          </div>
+        </div>
+      </mgl-map>
     </div>
       
-    <div class="col-4 " >
-      
+    <div class="col-4 ">
       <!-- <p style="text-align:center" class="bordure"> Mission : <br> Date Mission :  - {{this.mission[x-1]?.dateMission}} <br> - Adresse : {{this.mission[x-1]?.adressMission}} <br> - Acheter : {{this.mission[x-1]?.description}} <br> <br> <br> 
         <button type="button" class="btn btn-success"type="submit">Accepter</button> &nbsp;&nbsp;&nbsp;
          <button type="button" class="btn btn-danger" type="reset"    >Refuser</button></p>   -->
-
          <table class="table table-bordered">
           <thead>
             <tr>
                   <th>Nom Mission </th>
                   <th>Description </th>
-                  <th>Date et Heure</th>
+                  <th>Date</th>
                   <th>Adresse</th>
                   <th>Distance</th>
-                  <th>Accepter?</th>
             </tr>
           </thead>
           <tbody *ngFor="let x of distanceTab ; let i=index">
-            <tr *ngIf="this.distanceTab[i] <= this.range && this.distanceTab[i] > 2  "  >
-              
-             
+            <tr *ngIf="this.distanceTab[i] <= this.range && this.distanceTab[i] > 2  "  >  
               <td>{{mission[i].nomMission}}</td>
               <td>{{mission[i].description}}</td>
               <td>{{mission[i].dateMission}}</td>
               <td >{{this.longlat[i]?.features[0]?.place_name}}</td>
               <td>{{x}} KM</td>
-             <td><button type="button" class="btn btn-success"type="submit">Accepter</button> </td>
-           
-              </tr>
-
-              <tr *ngIf="this.distanceTab[i] < 2 ;else other "  >
-              
-             
-                <td>{{mission[i].nomMission}}</td>
-                <td>{{mission[i].description}}</td>
-                <td>{{mission[i].dateMission}}</td>
-                <td >{{this.longlat[i]?.features[0]?.place_name}}</td>
-                <td>{{x}} KM</td>
-               <td><button type="button" class="btn btn-success"type="submit">Accepter</button> </td>
-             
-                </tr>
-            
+              <td><button type="button" class="btn btn-success"type="submit">Accepter</button> </td>
+            </tr>
+            <tr *ngIf="this.distanceTab[i] < 2 ;else other "  >
+              <td>{{mission[i].nomMission}}</td>
+              <td>{{mission[i].description}}</td>
+              <td>{{mission[i].dateMission}}</td>
+              <td >{{this.longlat[i]?.features[0]?.place_name}}</td>
+              <td>{{x}} KM</td>
+              <td><button type="button" class="btn btn-success"type="submit">Accepter</button> </td>
+            </tr>   
           </tbody>
-
         </table>
-    
     </div>
-
-    
-      </div>
-      
-    </div>
+  </div>
+</div>
   
 
    

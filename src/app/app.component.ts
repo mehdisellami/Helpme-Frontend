@@ -4,7 +4,6 @@ import { RestService } from './service/rest.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { TokenStorageService } from './auth/token-storage.service';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,8 +13,7 @@ import { TokenStorageService } from './auth/token-storage.service';
 export class AppComponent implements OnInit {
   title = 'Helpme-Frontend';
   public msg:any;
-  titleMap = 'Bonjour Thomas ! prêts pour vos prochaines missions? ';
-
+  titleMap = 'Prêt pour vos prochaines missions ?';
 
   lat = 51.678418;
   lng = 7.809007;
@@ -23,13 +21,10 @@ export class AppComponent implements OnInit {
   private roles: string[];
   private authority: string;
 
-
   constructor(public restservice :RestService,private tokenStorage: TokenStorageService) {
-
-
   }
-  ngOnInit(){
 
+  ngOnInit(){
     if (this.tokenStorage.getToken()) {
       this.roles = this.tokenStorage.getAuthorities();
       this.roles.every(role => {
@@ -44,11 +39,6 @@ export class AppComponent implements OnInit {
         return true;
       });
     }
-
-
-
   }
-
-
 
 }

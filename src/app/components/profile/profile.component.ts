@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../newuser/user.model';
-import {RestService} from "../service/rest.service";
-import {MissionService} from "../service/mission.service";
+import {RestService} from "../../service/rest.service";
+import {MissionService} from "../../service/mission.service";
 
 
 @Component({

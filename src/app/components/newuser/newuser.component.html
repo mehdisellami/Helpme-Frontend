@@ -1,16 +1,9 @@
 <div class="wrapper fadeInDown">
   <div id="formContent">
       <!-- Tabs Titles -->
-  
       <!-- Icon -->
-
-      <div class="fadeIn first">
-        <img src="../assets/img/logo3.jpg" id="icon" alt="User Icon" />
-      </div>
-     
-      <div class="fadeIn first">
-       Bienvenue chez nous, nous sommes heureux de vous voir rejoindre notre communauté ! <br>
-      </div>
+      <div class="fadeIn first"><img src="../assets/img/logo3.jpg" id="icon" alt="User Icon" /></div>
+      <div class="fadeIn first"> Bienvenue parmi nous, merci de rejoindre notre communauté ! <br></div>
   
       <!-- Login Form -->
       <form>
@@ -20,14 +13,9 @@
         <input type="password" id="password" class="fadeIn third" name="password" placeholder="Mot de passe" [(ngModel)]="userInstance.password">
         <input type="text" id="tel" class="fadeIn third" name="Tel" placeholder="Numéro de télephone" [(ngModel)]="userInstance.tel">  
         <input type="submit" class="fadeIn fourth" (click)=" onSubmit()" value="Enregistrer">
-        
-
       </form>
 
       <!-- Remind Passowrd -->
-      <div id="formFooter">
-        <a class="underlineHover" routerLink="/login">Déjà inscrit ?</a>
-      </div>
-
+      <div id="formFooter"><a class="underlineHover" routerLink="/login">Déjà inscrit ?</a></div>
   </div>
 </div>
