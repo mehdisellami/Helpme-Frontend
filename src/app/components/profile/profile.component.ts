@@ -18,6 +18,8 @@ export class ProfileComponent implements OnInit {
   public userbyusername:any=[];
   public mission:any=[];
 
+  public historyMissionUserconnecte:any=[];
+
   public usernameConnecte;
 
   profileInstance: User = new User();
@@ -28,6 +30,7 @@ export class ProfileComponent implements OnInit {
     
    this.usernameConnecte=this.tokenStorage.getUsername();
   this.getUserbyUsername(this.usernameConnecte);
+  this. getUserMissionHistory(this.usernameConnecte);
   }
 
 
@@ -61,6 +64,21 @@ export class ProfileComponent implements OnInit {
       },
     );
   }
+
+
+  getUserMissionHistory(m){
+    this.missionservice.getUserMissionHistory(m).subscribe(
+      (data )=>{
+        this.historyMissionUserconnecte=data;
+        console.log(this.historyMissionUserconnecte);
+      },
+    );
+  }
+
+
+
+
+  
 }
 
 

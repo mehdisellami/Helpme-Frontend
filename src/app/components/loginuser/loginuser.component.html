@@ -5,6 +5,7 @@
       <div class="fadeIn first"><img src="../assets/img/logo3.jpg" id="icon" alt="User Icon" /></div>
   
       <div *ngIf="isLoggedIn">Vous êtes connecté en tant que {{usernameForm}}</div><br>
+      <div *ngIf="isLoggedIn"><button class="btn btn-primary" (click)="logout()">Logout</button></div>
       
       <!-- Login Form -->
       <div div *ngIf="isLoggedIn==false" >

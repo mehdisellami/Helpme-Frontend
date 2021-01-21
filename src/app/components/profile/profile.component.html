@@ -24,7 +24,7 @@
               <h6 class="mb-0">Nom </h6>
             </div>
             <div class="col-sm-9 text-secondary">
-              {{userbyusername[0]?.name}}
+              <strong>{{userbyusername[0]?.name}}</strong>
             </div>
           </div>
           <hr>
@@ -33,7 +33,7 @@
               <h6 class="mb-0"> prenom</h6>
             </div>
             <div class="col-sm-9 text-secondary">
-              {{userbyusername[0]?.username}}
+              <strong> {{userbyusername[0]?.username}}</strong>
 
             </div>
           </div>
@@ -62,7 +62,7 @@
   </div>
 </div>
 
-<h1> Votre historique de mission </h1>
+<h1> Votre historique de mission terminé </h1>
 
 <br>
 <table class="table table-bordered">
@@ -71,13 +71,16 @@
     <th>Nom Mission </th>
     <th>Date et Heure</th>
     <th>Adresse</th>
+    <th>Status</th>
+    
   </tr>
   </thead>
-  <tbody *ngFor="let x of mission">
+  <tbody *ngFor="let x of historyMissionUserconnecte">
   <tr >
     <td>{{x.nomMission}}</td>
     <td>{{x.dateMission}}</td>
     <td>{{x.adressMission}}</td>
+    <td><span class="badge badge-success">Terminé</span></td>
   </tr>
   </tbody>
 </table>

@@ -6,6 +6,8 @@
       <th>Date</th>
       <th>Adresse</th>
       <th>Description</th>
+      <th>Etat Mission</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -14,7 +16,11 @@
       <td>{{x.dateMission}}</td>
       <td>{{x.adressMission}}</td>
       <td>{{x.description}}</td>
-      <td><button (click)="delmission(x.idMission)">Supprimer</button></td>
+      <td *ngIf="x.statusMission=='ACCEPTE'"><span class="badge badge-info">{{x.statusMission}}</span></td>
+      <td *ngIf="x.statusMission=='ENATTENTE'"><span class="badge badge-warning">{{x.statusMission}}</span></td>
+      <td *ngIf="x.statusMission=='EnCours'"><span class="badge badge-primary">{{x.statusMission}}</span></td>
+      <td *ngIf="x.statusMission=='Termine'"><span class="badge badge-success">{{x.statusMission}}</span></td>
+      <td><button (click)="delmission(x.idMission)" class="btn btn-danger">Supprimer</button></td>
       </tr>
   </tbody>
 </table>

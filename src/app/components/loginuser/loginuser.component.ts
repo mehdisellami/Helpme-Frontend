@@ -68,6 +68,11 @@ export class LoginuserComponent implements OnInit {
     window.location.reload();
   }
 
+  logout() {
+    this.tokenStorage.signOut();
+    window.location.replace("login");  
+    }
+
 
 
   getUserIdbyUsername(m){

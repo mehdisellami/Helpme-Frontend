@@ -43,6 +43,12 @@ export class MissionService {
   return this.http.put("https://helpmebackend.herokuapp.com/affecterUserMission/"+i+"/"+j,user);
  }
 
+ getUserMissionHistory(usernameUsertoFindHistoryMission){
+
+  return this.http.get<Mission>("https://helpmebackend.herokuapp.com/findUserMissionHistory/" + usernameUsertoFindHistoryMission);
+
+ }
+
 
 }
 

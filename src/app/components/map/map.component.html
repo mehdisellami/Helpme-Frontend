@@ -29,13 +29,13 @@
             
         <!-- point de la  mission -->
         <div *ngFor="let l of longlat ; let i = index "  >
-          <div *ngIf="this.distanceTab[i] <= this.range ;else other ">
+          <div *ngIf="this.distanceTab[i] <= this.range && mission[i].statusMission=='ENATTENTE' ">
             <mgl-marker #missionmarker [lngLat]="[l.features[0].center[0], l.features[0].center[1]]" > </mgl-marker>
         
             <!-- Popup mission dans la map -->
             <mgl-popup  [marker]="missionmarker" >{{mission[i].nomMission}},{{mission[i].adressMission}}</mgl-popup>
           </div>
-          <div *ngIf="this.distanceTab[i] < 2 ;else other ">
+          <div *ngIf="this.distanceTab[i] < 2  && mission[i].statusMission=='ENATTENTE' ">
             <mgl-marker #missionmarker [lngLat]="[l.features[0].center[0], l.features[0].center[1]]" ></mgl-marker>
               <!-- Popup mission dans la map -->
               <mgl-popup  [marker]="missionmarker" >{{mission[i].nomMission}},{{mission[i].adressMission}}</mgl-popup>
@@ -56,10 +56,11 @@
                   <th>Date</th>
                   <th>Adresse</th>
                   <th>Distance</th>
+                  <th>Accepter?</th>
             </tr>
           </thead>
           <tbody *ngFor="let x of distanceTab ; let i=index">
-            <tr *ngIf="this.distanceTab[i] <= this.range && this.distanceTab[i] > 2  "  >  
+            <tr *ngIf="this.distanceTab[i] <= this.range && this.distanceTab[i] > 2 && mission[i].statusMission=='ENATTENTE'   "  >  
               <td>{{mission[i].nomMission}}</td>
               <td>{{mission[i].description}}</td>
               <td>{{mission[i].dateMission}}</td>
@@ -69,7 +70,7 @@
            
               </tr>
 
-              <tr *ngIf="this.distanceTab[i] < 2 ;else other "  >
+              <tr *ngIf="this.distanceTab[i] < 2  && mission[i].statusMission=='ENATTENTE'"  >
               
              
                 <td>{{mission[i].nomMission}}</td>
