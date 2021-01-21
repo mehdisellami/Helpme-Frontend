@@ -52,6 +52,16 @@ export class MissionService {
     ;
 
   }
+
+
+
+ affecterUserMissionPUT(i,j,user){
+
+
+  return this.http.put("https://helpmebackend.herokuapp.com/affecterUserMission/"+i+"/"+j,user);
+ }
+
+
 }
 
 

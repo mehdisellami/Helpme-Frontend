@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { AuthLoginInfo } from '../auth/login-info';
 import { TokenStorageService } from '../auth/token-storage.service';
+import { RestService } from '../service/rest.service';
 
 @Component({
   selector: 'app-loginuser',
@@ -15,10 +16,15 @@ export class LoginuserComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
+
+  useronnecte:any=[];
+
+  tokenUsername :any;
+
   usernameForm : any;
   private loginInfo: AuthLoginInfo;
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService,public restservice :RestService) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -44,7 +50,11 @@ export class LoginuserComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getAuthorities();
-        this.reloadPage();
+
+        this.tokenUsername=this.tokenStorage.getUsername();
+        
+        this.getUserIdbyUsername(this.tokenUsername);
+       // this.reloadPage();
       },
       error => {
         console.log(error);
@@ -57,4 +67,20 @@ export class LoginuserComponent implements OnInit {
   reloadPage() {
     window.location.reload();
   }
+
+
+
+  getUserIdbyUsername(m){
+    this.restservice.getUserConnecte(m).subscribe(
+      (data )=>{
+        this.useronnecte=data;
+        console.log(this.useronnecte);
+        },
+    );
+  }
+
+
+
+
 }
+

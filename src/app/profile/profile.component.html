@@ -24,7 +24,7 @@
               <h6 class="mb-0">Nom </h6>
             </div>
             <div class="col-sm-9 text-secondary">
-              {{ user.name }}
+              {{userbyusername[0]?.name}}
             </div>
           </div>
           <hr>
@@ -33,7 +33,7 @@
               <h6 class="mb-0"> prenom</h6>
             </div>
             <div class="col-sm-9 text-secondary">
-              {{user.username}}
+              {{userbyusername[0]?.username}}
 
             </div>
           </div>
@@ -43,7 +43,7 @@
               <h6 class="mb-0">Email</h6>
             </div>
             <div class="col-sm-9 text-secondary">
-              {{user.email}}
+              {{userbyusername[0]?.email}}
             </div>
           </div>
           <hr>
@@ -52,7 +52,7 @@
               <h6 class="mb-0">Tel</h6>
             </div>
             <div class="col-sm-9 text-secondary">
-              {{user.tel}}
+              {{userbyusername[0]?.tel}}
             </div>
           </div>
           <hr>
@@ -73,8 +73,8 @@
     <th>Adresse</th>
   </tr>
   </thead>
-  <tbody>
-  <tr *ngFor="let x of mission">
+  <tbody *ngFor="let x of mission">
+  <tr >
     <td>{{x.nomMission}}</td>
     <td>{{x.dateMission}}</td>
     <td>{{x.adressMission}}</td>

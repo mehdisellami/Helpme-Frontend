@@ -132,7 +132,7 @@
               <td>{{mission[i].dateMission}}</td>
               <td >{{this.longlat[i]?.features[0]?.place_name}}</td>
               <td>{{x}} KM</td>
-             <td><button type="button" class="btn btn-success"type="submit">Accepter</button> </td>
+             <td><button type="button" class="btn btn-success"  (click)="affecterUserMission(useronnecte,mission[i].idMission,0)">Accepter</button> </td>
            
               </tr>
 
@@ -144,7 +144,7 @@
                 <td>{{mission[i].dateMission}}</td>
                 <td >{{this.longlat[i]?.features[0]?.place_name}}</td>
                 <td>{{x}} KM</td>
-               <td><button type="button" class="btn btn-success"type="submit">Accepter</button> </td>
+               <td><button type="button" class="btn btn-success" (click)="affecterUserMission(useronnecte,mission[i].idMission,0)">Accepter</button> </td>
              
                 </tr>
             

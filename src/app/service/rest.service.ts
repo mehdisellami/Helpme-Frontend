@@ -12,6 +12,9 @@ export class RestService {
   public urlpostuser="https://helpmebackend.herokuapp.com/api/auth/singup";
 
   public urlgetuser="https://helpmebackend.herokuapp.com/listeUser";
+
+  public urlgetuserConnecteByUsername="https://helpmebackend.herokuapp.com/listeUser";
+
  
   constructor(private http: HttpClient) {
     
@@ -32,5 +35,14 @@ export class RestService {
 
     return this.http.get<User>(this.urlgetuser);
 
+  }
+
+  getUserConnecte(username){
+    return this.http.get<User>("https://helpmebackend.herokuapp.com/findidUserbyUsername/" + username);
+  }
+
+  getUserbyUsernameConnecte(username) {
+
+    return this.http.get<User>("https://helpmebackend.herokuapp.com/findUserbyUsername/" + username);
   }
 }

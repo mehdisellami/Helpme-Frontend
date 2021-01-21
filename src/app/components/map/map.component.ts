@@ -6,7 +6,8 @@ import { Mission } from '../creation-mission/mission.model';
 import { AppComponent } from 'src/app/app.component';
 import { logging } from 'protractor';
 import { htmlAstToRender3Ast } from '@angular/compiler/src/render3/r3_template_transform';
-
+import { TokenStorageService } from 'src/app/auth/token-storage.service';
+import { RestService } from 'src/app/service/rest.service';
 
 
 @Component({
@@ -22,7 +23,9 @@ public test:Object;
 
 
  
+public useronnecte:any=[];
 
+public tokenUsername :any;
 
 
   public mission :any= [];
@@ -50,7 +53,7 @@ public test:Object;
  }
 
 
-  constructor(public RestMission : MissionService ) {
+  constructor(public RestMission : MissionService, private tokenStorage: TokenStorageService ,public restservice :RestService ) {
 
    }
 
@@ -60,11 +63,8 @@ public test:Object;
 
     this.getPosition();
 
-
-
-
-  
-
+    this.tokenUsername=this.tokenStorage.getUsername();
+    this.getUserIdbyUsername(this.tokenUsername);
 
   }
 
@@ -160,6 +160,33 @@ apiDrivingMapbox(lnga,lata,lngb,latb) {
   
    
  }
+
+
+ getUserIdbyUsername(m){
+  this.restservice.getUserConnecte(m).subscribe(
+    (data )=>{
+      this.useronnecte=data;
+      console.log(this.useronnecte);
+      },
+  );
+}
+
+ affecterUserMission(i,j,user)
+      {
+        this.RestMission.affecterUserMissionPUT(i,j,user).subscribe(
+          (data)=>{
+            const type = 'success';
+            alert("vous avez ajouté à la mission")
+          return data;
+        },
+        (err)=>{
+          alert("ERROR");
+         
+        }
+      );
+      
+        
+      }
 
 
 

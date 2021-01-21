@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
   titleMap = 'Bonjour Thomas ! prêts pour vos prochaines missions? ';
 
 
+
   lat = 51.678418;
   lng = 7.809007;
 
@@ -45,10 +46,9 @@ export class AppComponent implements OnInit {
       });
     }
 
+    
 
 
-  }
-
-
+}
 
 }
