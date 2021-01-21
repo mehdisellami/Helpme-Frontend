@@ -29,7 +29,7 @@ public tokenUsername :any;
 
 
   public mission :any= [];
-  public apiMaboxDriving :any= [];
+  public apiMaboxDrivingTable :any= [];
   public longlat:any=[];
   public maposition:any=[];
   public distanceTab:any=[];
@@ -37,7 +37,11 @@ public tokenUsername :any;
   public index=0;
   public range :any;
   public up_forms:any;
+  
 
+  public secondeminute:any=[];
+
+  public MintoSec : any;
   CheckedBx=false;
 
   switchon(ev){
@@ -53,12 +57,14 @@ public tokenUsername :any;
    }
 
   ngOnInit(): void {
-    this.getMission();
+    this.getMissionenAttente();
     this.getPosition();
 
     this.tokenUsername=this.tokenStorage.getUsername();
     this.getUserIdbyUsername(this.tokenUsername);
 
+
+    
   }
 
   filter(){
@@ -70,6 +76,15 @@ public tokenUsername :any;
     var c = Math.cos;
     var a = 0.5 - c((lat2 - lat1) * p)/2 + c(lat1 * p) * c(lat2 * p) * (1 - c((lon2 - lon1) * p))/2;
     this.distanceTab.push(Math.round( 12742 * Math.asin(Math.sqrt(a)))); // 2 * R; R = 6371 km
+  }
+
+  secToMin(){
+    for (let i in this.mission){
+     // console.log(Math.round((this.apiMaboxDrivingTable[i]?.routes[0]?.duration)/60));
+      this.secondeminute.push(Math.round((this.apiMaboxDrivingTable[i]?.routes[0]?.duration)/60));
+      
+    }
+   
   }
  
   getPosition(): Promise<any>{
@@ -84,8 +99,8 @@ public tokenUsername :any;
   }
 
 
-  getMission() {
-   this.RestMission.GetMission().subscribe(
+  getMissionenAttente() {
+   this.RestMission.GetMissionenAttente().subscribe(
     (data )=>{
         this.mission=data;    
           console.log(data);
@@ -99,35 +114,38 @@ public tokenUsername :any;
       data =>{
         this.longlat.push(data);
         this.distance(this.longlat[i]?.features[0].center[1],this.longlat[i]?.features[0].center[0],this.maposition[1],this.maposition[0]);
-        console.log(this.apiDrivingMapbox(this.maposition[0],this.maposition[1],this.longlat[i]?.features[0].center[0],this.longlat[i]?.features[0].center[1]));
+        this.apiwalkingMapbox(this.maposition[0],this.maposition[1],this.longlat[i]?.features[0].center[0],this.longlat[i]?.features[0].center[1])  ;
+        
       },);
     }
     console.log(this.longlat);
+    
   }
 
 
 
 
-apiDrivingMapbox(lnga,lata,lngb,latb) {
-
-  this.RestMission.apiDrivingMapbox(lnga,lata,lngb,latb).subscribe(
+apiwalkingMapbox(lnga,lata,lngb,latb) {
+  
+ 
+  this.RestMission.apiWalkinggMapbox(lnga,lata,lngb,latb).subscribe(
 
      (data )=>{
 
-       this.apiMaboxDriving=data;
-             
-         console.log(data);
       
+       this.apiMaboxDrivingTable.push(data);
+       //console.log(this.apiMaboxDrivingTable);
+             
        },
 
    );
-  
+   
    
  }
 
 
  getUserIdbyUsername(m){
-  this.restservice.getUserConnecte(m).subscribe(
+  this.restservice.getIDUserConnecte(m).subscribe(
     (data )=>{
       this.useronnecte=data;
       console.log(this.useronnecte);

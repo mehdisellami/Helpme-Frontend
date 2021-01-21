@@ -5,7 +5,7 @@
       <div class="col-4  ">
         <div class="custom-control custom-switch"     >
           <input type="checkbox" class="custom-control-input" id="customSwitches" (click)="switchon($event)">
-          <label class="custom-control-label" for="customSwitches"  (click)="AdresstoLongLAt(this.mission)"></label>
+          <label class="custom-control-label" for="customSwitches"  (click)="AdresstoLongLAt(this.mission)" ></label>
         </div>
       </div>
     </div>
@@ -29,13 +29,13 @@
             
         <!-- point de la  mission -->
         <div *ngFor="let l of longlat ; let i = index "  >
-          <div *ngIf="this.distanceTab[i] <= this.range && mission[i].statusMission=='ENATTENTE' ">
+          <div *ngIf="this.distanceTab[i] <= this.range  ">
             <mgl-marker #missionmarker [lngLat]="[l.features[0].center[0], l.features[0].center[1]]" > </mgl-marker>
         
             <!-- Popup mission dans la map -->
             <mgl-popup  [marker]="missionmarker" >{{mission[i].nomMission}},{{mission[i].adressMission}}</mgl-popup>
           </div>
-          <div *ngIf="this.distanceTab[i] < 2  && mission[i].statusMission=='ENATTENTE' ">
+          <div *ngIf="this.distanceTab[i] < 2   ">
             <mgl-marker #missionmarker [lngLat]="[l.features[0].center[0], l.features[0].center[1]]" ></mgl-marker>
               <!-- Popup mission dans la map -->
               <mgl-popup  [marker]="missionmarker" >{{mission[i].nomMission}},{{mission[i].adressMission}}</mgl-popup>
@@ -56,28 +56,31 @@
                   <th>Date</th>
                   <th>Adresse</th>
                   <th>Distance</th>
+                  <th>Durée en Marchant</th>
                   <th>Accepter?</th>
             </tr>
           </thead>
           <tbody *ngFor="let x of distanceTab ; let i=index">
-            <tr *ngIf="this.distanceTab[i] <= this.range && this.distanceTab[i] > 2 && mission[i].statusMission=='ENATTENTE'   "  >  
+            <tr *ngIf="this.distanceTab[i] <= this.range && this.distanceTab[i] > 2    "  >  
               <td>{{mission[i].nomMission}}</td>
               <td>{{mission[i].description}}</td>
               <td>{{mission[i].dateMission}}</td>
-              <td >{{this.longlat[i]?.features[0]?.place_name}}</td>
+              <td >{{mission[i].adressMission}}</td>
               <td>{{x}} KM</td>
+              <td>{{secondeminute[i]}} Minutes</td>
              <td><button type="button" class="btn btn-success"  (click)="affecterUserMission(useronnecte,mission[i].idMission,0)">Accepter</button> </td>
            
               </tr>
 
-              <tr *ngIf="this.distanceTab[i] < 2  && mission[i].statusMission=='ENATTENTE'"  >
+              <tr *ngIf="this.distanceTab[i] < 2  "  >
               
              
                 <td>{{mission[i].nomMission}}</td>
                 <td>{{mission[i].description}}</td>
                 <td>{{mission[i].dateMission}}</td>
-                <td >{{this.longlat[i]?.features[0]?.place_name}}</td>
+                <td >{{mission[i].adressMission}}</td>
                 <td>{{x}} KM</td>
+                <td>{{secondeminute[i]}} Minutes</td>
                <td><button type="button" class="btn btn-success" (click)="affecterUserMission(useronnecte,mission[i].idMission,0)">Accepter</button> </td>
              
                 </tr>
@@ -88,9 +91,11 @@
   </div>
 </div>
   
+<div *ngFor="let x of secondeminute">
+  {{x}}
+</div>
 
-   
-      
+   <td><button  class="btn btn-success" (click)="secToMin()">Accept</button>      
 
   
 

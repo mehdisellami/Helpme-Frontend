@@ -1,0 +1,25 @@
+<div style="text-align: center;"><h1>FeedBack sur vos mission</h1></div><br>
+
+<form name="form" (ngSubmit)="MissionRatingStars(selectedValue1,selectedValue2,0)">
+    
+    
+    <div>
+        <label for="">Mission</label>
+        <select name="projet" id="projet" [(ngModel)]="selectedValue1" style="width: 200px;">
+            <option *ngFor="let x of historyMissionUserconnecte" [ngValue]="x.idMission">
+              {{x.nomMission}}</option>
+          </select>
+    </div>
+
+    <div>
+        <label for="">Nombre D'etoiles (de 1 à 5)</label>
+        <input type="text" id="nbetoile" name="nbetoile" [(ngModel)]="selectedValue2" >
+    </div>
+
+    
+   
+    <div style="text-align: center;">
+        <button type="submit" class="btn btn-primary"  >Envoyer</button>
+        <button type="reset" class="btn btn-primary">Réinitialiser</button>
+    </div>
+</form>

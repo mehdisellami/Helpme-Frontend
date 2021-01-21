@@ -8,80 +8,98 @@
     </ul>
   </div>
   <div class="welcome-text">
-    <h1>  Bienvenue sur votre profile   </h1>
+    <h1> Bienvenue sur votre profile </h1>
   </div>
 
 </header>
 
 <body>
-<div class="container">
-  <div class="main-body">
-    <div class="row gutters-sm">
-      <div class="col-md-8">
-        <div class="card mb-3">
-          <div class="row">
-            <div class="col-sm-3">
-              <h6 class="mb-0">Nom </h6>
+  <div class="container">
+    <div class="main-body">
+      <div class="row gutters-sm">
+        <div class="col-md-8">
+          <div class="card mb-3">
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Nom </h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                <strong>{{userbyusername[0]?.name}}</strong>
+              </div>
             </div>
-            <div class="col-sm-9 text-secondary">
-              <strong>{{userbyusername[0]?.name}}</strong>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-sm-3">
-              <h6 class="mb-0"> prenom</h6>
-            </div>
-            <div class="col-sm-9 text-secondary">
-              <strong> {{userbyusername[0]?.username}}</strong>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0"> prenom</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                <strong> {{userbyusername[0]?.username}}</strong>
 
+              </div>
             </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Email</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{userbyusername[0]?.email}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Tel</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{userbyusername[0]?.tel}}
+              </div>
+            </div>
+            <hr>
           </div>
-          <hr>
-          <div class="row">
-            <div class="col-sm-3">
-              <h6 class="mb-0">Email</h6>
-            </div>
-            <div class="col-sm-9 text-secondary">
-              {{userbyusername[0]?.email}}
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-sm-3">
-              <h6 class="mb-0">Tel</h6>
-            </div>
-            <div class="col-sm-9 text-secondary">
-              {{userbyusername[0]?.tel}}
-            </div>
-          </div>
-          <hr>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<h1> Votre historique de mission terminé </h1>
+  <h1> Votre historique de mission terminé </h1>
 
-<br>
-<table class="table table-bordered">
-  <thead>
-  <tr>
-    <th>Nom Mission </th>
-    <th>Date et Heure</th>
-    <th>Adresse</th>
-    <th>Status</th>
-    
-  </tr>
-  </thead>
-  <tbody *ngFor="let x of historyMissionUserconnecte">
-  <tr >
-    <td>{{x.nomMission}}</td>
-    <td>{{x.dateMission}}</td>
-    <td>{{x.adressMission}}</td>
-    <td><span class="badge badge-success">Terminé</span></td>
-  </tr>
-  </tbody>
-</table>
+  <br>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nom Mission </th>
+        <th>Date et Heure</th>
+        <th>Adresse</th>
+        <th>Status</th>
+        <th>Etoiles</th>
+        <th>Commentaire</th>
+        <th>Envie de Donner votre FeedBack?</th>
+
+      </tr>
+    </thead>
+    <tbody *ngFor="let x of historyMissionUserconnecte">
+      <tr>
+        <td>{{x.nomMission}}</td>
+        <td>{{x.dateMission}}</td>
+        <td>{{x.adressMission}}</td>
+        <td><span class="badge badge-success">Terminé</span></td>
+
+      
+        <td *ngIf="x.feedbackNote=='ETOILE0' ">Pas d'étoile !</td>
+        <td *ngIf="x.feedbackNote=='ETOILE1'">&#11088;</td>
+        <td *ngIf="x.feedbackNote=='ETOILE2'">&#11088;&#11088;</td>
+        <td *ngIf="x.feedbackNote=='ETOILE3'">&#11088;&#11088;&#11088;</td>
+        <td *ngIf="x.feedbackNote=='ETOILE4'">&#11088;&#11088;&#11088;&#11088;</td>
+        <td *ngIf="x.feedbackNote=='ETOILE5'">&#11088;&#11088;&#11088;&#11088;&#11088;</td>
+
+        <td> {{x.commentaire}}</td>
+
+        <td > <a routerLink="/feedback-mission"> Cliquer Içi</a></td>
+      </tr>
+      
+    </tbody>
+  </table>
 </body>
+
+

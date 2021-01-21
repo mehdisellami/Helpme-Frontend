@@ -17,7 +17,7 @@ export class LoginuserComponent implements OnInit {
   roles: string[] = [];
 
 
-  useronnecte:any=[];
+  userIDconnecte:any=[];
 
   tokenUsername :any;
 
@@ -54,7 +54,7 @@ export class LoginuserComponent implements OnInit {
         this.tokenUsername=this.tokenStorage.getUsername();
         
         this.getUserIdbyUsername(this.tokenUsername);
-       // this.reloadPage();
+       this.reloadPage();
       },
       error => {
         console.log(error);
@@ -76,10 +76,10 @@ export class LoginuserComponent implements OnInit {
 
 
   getUserIdbyUsername(m){
-    this.restservice.getUserConnecte(m).subscribe(
+    this.restservice.getIDUserConnecte(m).subscribe(
       (data )=>{
-        this.useronnecte=data;
-        console.log(this.useronnecte);
+        this.userIDconnecte=data;
+        console.log(this.userIDconnecte);
         },
     );
   }
