@@ -22,6 +22,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { httpInterceptorProviders } from './auth/auth-interceptor';
 import { MissionsComponent } from './components/missions/missions.component';
+import { FeedBackMissionComponent } from './components/feed-back-mission/feed-back-mission.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MissionsComponent } from './components/missions/missions.component';
     PassworduserComponent,
     HomeComponent,
     ProfileComponent,
-    MissionsComponent
+    MissionsComponent,
+    FeedBackMissionComponent
   ],
   imports: [
     BrowserModule,
