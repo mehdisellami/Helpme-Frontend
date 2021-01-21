@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../newuser/user.model';
-<<<<<<< HEAD:src/app/profile/profile.component.ts
-import {RestService} from "../service/rest.service";
-import {MissionService} from "../service/mission.service";
-import { TokenStorageService } from '../auth/token-storage.service';
-=======
-import {RestService} from "../../service/rest.service";
-import {MissionService} from "../../service/mission.service";
->>>>>>> d0c04ea78d80b076a368579c42eb845fef2759e7:src/app/components/profile/profile.component.ts
+
+
+import { RestService } from 'src/app/service/rest.service';
+import { MissionService } from 'src/app/service/mission.service';
+import { TokenStorageService } from 'src/app/auth/token-storage.service';
 
 
 @Component({
