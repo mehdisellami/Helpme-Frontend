@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD:src/app/loginuser/loginuser.component.ts
 import { AuthService } from '../auth/auth.service';
 import { AuthLoginInfo } from '../auth/login-info';
 import { TokenStorageService } from '../auth/token-storage.service';
 import { RestService } from '../service/rest.service';
+=======
+import { AuthService } from '../../auth/auth.service';
+import { AuthLoginInfo } from '../../auth/login-info';
+import { TokenStorageService } from '../../auth/token-storage.service';
+>>>>>>> d0c04ea78d80b076a368579c42eb845fef2759e7:src/app/components/loginuser/loginuser.component.ts
 
 @Component({
   selector: 'app-loginuser',

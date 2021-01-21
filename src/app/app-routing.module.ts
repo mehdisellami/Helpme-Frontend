@@ -4,13 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CreationMissionComponent } from './components/creation-mission/creation-mission.component';
 import { MapComponent } from './components/map/map.component';
-import { HomeComponent } from './home/home.component';
-import { LoginuserComponent } from './loginuser/loginuser.component';
-import { NewuserComponent } from './newuser/newuser.component';
-import { PassworduserComponent } from './passworduser/passworduser.component';
-import { ProfileComponent } from './profile/profile.component';
-import { MissionsComponent } from './missions/missions.component';
-
+import { HomeComponent } from './components/home/home.component';
+import { LoginuserComponent } from './components/loginuser/loginuser.component';
+import { NewuserComponent } from './components/newuser/newuser.component';
+import { PassworduserComponent } from './components/passworduser/passworduser.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { MissionsComponent } from './components/missions/missions.component';
 
 const routes: Routes = [
   {

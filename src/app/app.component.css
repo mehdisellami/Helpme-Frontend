@@ -1,14 +1,11 @@
-.nav-item , .navbar-brand  {
-    
+.nav-item , .navbar-brand  {  
     font:  sans-serif;
     text-transform: uppercase;
     display: block;
     white-space: pre;
     text-align: right;
     padding-left: 35px;
-    color: #FF0000;
- 
-    
+    color: #FF0000; 
   }
 
   .nav-item  :hover{
@@ -26,35 +23,29 @@
   padding-left: 100px;
 }
 
-
 .login{
   padding-left: 300px;
   white-space: pre;
 }
+
 .register{
-  
   white-space: pre;
 }
 
-
-.navbar-brand{
-    
+.navbar-brand{   
   padding-left: 0px;
   padding-right: 50px;
   padding-top: 0px;
   padding-bottom: 0px;
   height: auto;
-
 }
-
-  
+ 
 nav{
   background: linear-gradient(rgba(153, 150, 150, 0.616), rgba(230, 226, 226, 0.822));
 	-webkit-background-size: cover;
 	background-size: cover;
 	background-position: center center;
 	position: relative;
-
 }
 
 button{

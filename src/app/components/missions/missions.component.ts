@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../newuser/user.model';
-import { MissionService } from '../service/mission.service';
-import { RestService } from '../service/rest.service';
+import { MissionService } from '../../service/mission.service';
+import { RestService } from '../../service/rest.service';
 
 @Component({
   selector: 'app-missions',
@@ -10,7 +10,6 @@ import { RestService } from '../service/rest.service';
 })
 export class MissionsComponent implements OnInit {
   public mission:any=[];
-
   userInstance: User = new User();
 
   constructor(public missionservice :MissionService , public restservice : RestService) { }
@@ -37,10 +36,9 @@ export class MissionsComponent implements OnInit {
     (err)=>{
     }
     );  
-}
+  }
 
-reloadPage() {
-  window.location.reload();
-}
-
+  reloadPage() {
+    window.location.reload();
+  }
 }
