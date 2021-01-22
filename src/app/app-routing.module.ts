@@ -8,7 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginuserComponent } from './components/loginuser/loginuser.component';
 import { NewuserComponent } from './components/newuser/newuser.component';
 import { PassworduserComponent } from './components/passworduser/passworduser.component';
-import { ProfileComponent } from './components/profile/profile.component';
+import { ProfilComponent } from './components/profil/profil.component';
 import { MissionsComponent } from './components/missions/missions.component';
 import { FeedBackMissionComponent } from './components/feed-back-mission/feed-back-mission.component';
 
@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'register', component: NewuserComponent},
   { path: 'lostpassword', component: PassworduserComponent},
   { path: 'home', component: HomeComponent},
-  { path: 'app-profile', component: ProfileComponent},
+  { path: 'app-profil', component: ProfilComponent},
   { path: 'feedback-mission', component: FeedBackMissionComponent},
   { path: 'app-missions', component: MissionsComponent}
 ];

@@ -1,0 +1,103 @@
+<header>
+    <div class="wrapper">
+      <div class="logo">
+  
+      </div>
+      <ul class="nav-area">
+  
+      </ul>
+    </div>
+    <div class="welcome-text">
+      <h1>Profil</h1>
+    </div>
+  
+  </header>
+  
+  <body>
+    <div class="container">
+      <div class="main-body">
+        <div class="row gutters-sm">
+          <div class="col-md-8">
+            <div class="card mb-3">
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Nom </h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <strong>{{userbyusername[0]?.name}}</strong>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0"> prenom</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <strong> {{userbyusername[0]?.username}}</strong>
+  
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Email</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{userbyusername[0]?.email}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Tel</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{userbyusername[0]?.tel}}
+                </div>
+              </div>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <h1> Missions terminées </h1>
+  
+    <br>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Nom Mission </th>
+          <th>Date et Heure</th>
+          <th>Adresse</th>
+          <th>Statut</th>
+          <th>Note</th>
+          <th>Commentaire</th>
+          <th>Donner un feedback</th>
+  
+        </tr>
+      </thead>
+      <tbody *ngFor="let x of historyMissionUserconnecte">
+        <tr>
+          <td>{{x.nomMission}}</td>
+          <td>{{x.dateMission}}</td>
+          <td>{{x.adressMission}}</td>
+          <td><span class="badge badge-success">Terminé</span></td>
+  
+        
+          <td *ngIf="x.feedbackNote=='ETOILE0' ">Sans note</td>
+          <td *ngIf="x.feedbackNote=='ETOILE1'">&#11088;</td>
+          <td *ngIf="x.feedbackNote=='ETOILE2'">&#11088;&#11088;</td>
+          <td *ngIf="x.feedbackNote=='ETOILE3'">&#11088;&#11088;&#11088;</td>
+          <td *ngIf="x.feedbackNote=='ETOILE4'">&#11088;&#11088;&#11088;&#11088;</td>
+          <td *ngIf="x.feedbackNote=='ETOILE5'">&#11088;&#11088;&#11088;&#11088;&#11088;</td>
+  
+          <td> {{x.commentaire}}</td>
+  
+          <td > <a routerLink="/feedback-mission"> Cliquez ici</a></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </body>

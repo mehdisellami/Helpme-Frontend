@@ -41,7 +41,7 @@ export class FeedBackMissionComponent implements OnInit {
       (data)=>{
         const type = 'success';
         alert("Merci pour votre Avis !");
-        window.open("/app-profile","_self");
+        window.open("/app-profil","_self");
       return data;
     },
     (err)=>{

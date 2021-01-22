@@ -11,7 +11,7 @@
       <li class="nav-item" *ngIf="isLoggedIn"><a class="nav-link" routerLink="/app-map">Carte</a></li>
       <li class="nav-item" *ngIf="isLoggedIn"><a class="nav-link" routerLink="/app-creation-mission">Créer une mission</a></li>
       <li class="nav-item" *ngIf="isLoggedIn"><a class="nav-link" routerLink="/app-missions">Missions</a></li>
-      <li class="nav-item" *ngIf="isLoggedIn"><a class="nav-link" routerLink="/app-profile">Mon profil</a></li>
+      <li class="nav-item" *ngIf="isLoggedIn"><a class="nav-link" routerLink="/app-profil">Mon profil</a></li>
       <li class="nav-item login"  *ngIf="!isLoggedIn"><button type="button" class="btn btn-success " routerLink="/login">Connexion</button></li>
       <li class="nav-item" *ngIf="!isLoggedIn"><button type="button" class="btn btn-success " routerLink="/register">Inscription</button></li>
       <li class="nav-item delog" *ngIf="isLoggedIn"><button type="button" class="btn btn-primary" (click)="deconnexion()">Deconnexion</button></li>

@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../newuser/user.model';
 
-
 import { RestService } from 'src/app/service/rest.service';
 import { MissionService } from 'src/app/service/mission.service';
 import { TokenStorageService } from 'src/app/auth/token-storage.service';
 
-
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-profil',
+  templateUrl: './profil.component.html',
+  styleUrls: ['./profil.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfilComponent implements OnInit {
   public user:any=[];
 
   public userbyusername:any=[];
@@ -20,16 +18,14 @@ export class ProfileComponent implements OnInit {
   public historyMissionUserconnecte:any=[];
   public usernameConnecte;
 
-  profileInstance: User = new User();
+  profilInstance: User = new User();
   constructor(public missionservice :MissionService, public restservice : RestService , private tokenStorage: TokenStorageService) { }
-
 
   ngOnInit(): void {  
     this.usernameConnecte=this.tokenStorage.getUsername();
     this.getUserbyUsername(this.usernameConnecte);
     this. getUserMissionHistory(this.usernameConnecte);
   }
-
 
   getUser() {
     this.restservice.GetUser().subscribe(
@@ -58,7 +54,6 @@ export class ProfileComponent implements OnInit {
     );
   }
 
-
   getUserMissionHistory(m){
     this.missionservice.getUserMissionHistory(m).subscribe(
       (data )=>{
@@ -67,8 +62,5 @@ export class ProfileComponent implements OnInit {
       },
     );
   }
-
   
 }
-
-

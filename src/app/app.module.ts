@@ -18,11 +18,11 @@ import { LoginuserComponent } from './components/loginuser/loginuser.component';
 import { NewuserComponent } from './components/newuser/newuser.component';
 import { PassworduserComponent } from './components/passworduser/passworduser.component';
 import { HomeComponent } from './components/home/home.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { httpInterceptorProviders } from './auth/auth-interceptor';
 import { MissionsComponent } from './components/missions/missions.component';
 import { FeedBackMissionComponent } from './components/feed-back-mission/feed-back-mission.component';
+import { ProfilComponent } from './components/profil/profil.component';
 
 @NgModule({
   declarations: [
@@ -33,9 +33,9 @@ import { FeedBackMissionComponent } from './components/feed-back-mission/feed-ba
     NewuserComponent,
     PassworduserComponent,
     HomeComponent,
-    ProfileComponent,
     MissionsComponent,
-    FeedBackMissionComponent
+    FeedBackMissionComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
