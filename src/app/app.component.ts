@@ -22,11 +22,14 @@ export class AppComponent implements OnInit {
   private roles: string[];
   private authority: string;
 
+  isLoggedIn = false;
+
   constructor(public restservice :RestService,private tokenStorage: TokenStorageService) {
   }
 
   ngOnInit(){
     if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
       this.roles = this.tokenStorage.getAuthorities();
       this.roles.every(role => {
         if (role === 'ROLE_ADMIN') {
@@ -40,10 +43,12 @@ export class AppComponent implements OnInit {
         return true;
       });
     }
-
-    
-
-
 }
+
+deconnexion() {
+  this.tokenStorage.signOut();
+  this.isLoggedIn=false;
+  window.location.replace("login");  
+  }
 
 }

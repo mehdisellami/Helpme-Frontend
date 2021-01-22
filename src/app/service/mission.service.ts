@@ -57,8 +57,8 @@ export class MissionService {
 
  MissionRating(i,j,user){
 
-
   return this.http.put("https://helpmebackend.herokuapp.com/feedBackMission/"+i+"/"+j,user);
+  
  }
 
 

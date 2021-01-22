@@ -24,6 +24,11 @@
 }
 
 .login{
+  padding-left: 750px;
+  white-space: pre;
+}
+
+.delog{
   padding-left: 300px;
   white-space: pre;
 }

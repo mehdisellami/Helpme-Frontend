@@ -19,6 +19,7 @@ export class CreationMissionComponent implements OnInit {
     this.mission.PostMission(this.missionInstance)
     .subscribe( data => {
       alert("Mission créée");
+      window.open("/app-missions","_self");
       return this.missionInstance=data;
     },
     (err)=>{});  

@@ -33,9 +33,9 @@
         </div>
       </form>
     </div>
-    
+    <br>
       <!-- Remind Passowrd -->
-      <div id="formFooter">
+      <div id="formFooter" *ngIf="isLoggedIn==false">
         <a class="underlineHover" href="/lostpassword">Mot de passe oublié ?</a>
         <br>
         <a class="underlineHover" routerLink="/register">Nouvel utilisateur ?</a>

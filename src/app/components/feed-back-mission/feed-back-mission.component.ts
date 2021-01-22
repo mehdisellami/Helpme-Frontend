@@ -40,7 +40,8 @@ export class FeedBackMissionComponent implements OnInit {
     this.missionservice.MissionRating(i,j,user).subscribe(
       (data)=>{
         const type = 'success';
-        alert("Merci pour votre Avis !")
+        alert("Merci pour votre Avis !");
+        window.open("/app-profile","_self");
       return data;
     },
     (err)=>{
@@ -48,7 +49,5 @@ export class FeedBackMissionComponent implements OnInit {
      
     }
   );
-  
-    
   }
 }

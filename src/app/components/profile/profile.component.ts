@@ -17,20 +17,17 @@ export class ProfileComponent implements OnInit {
 
   public userbyusername:any=[];
   public mission:any=[];
-
   public historyMissionUserconnecte:any=[];
-
   public usernameConnecte;
 
   profileInstance: User = new User();
   constructor(public missionservice :MissionService, public restservice : RestService , private tokenStorage: TokenStorageService) { }
 
 
-  ngOnInit(): void {
-    
-   this.usernameConnecte=this.tokenStorage.getUsername();
-  this.getUserbyUsername(this.usernameConnecte);
-  this. getUserMissionHistory(this.usernameConnecte);
+  ngOnInit(): void {  
+    this.usernameConnecte=this.tokenStorage.getUsername();
+    this.getUserbyUsername(this.usernameConnecte);
+    this. getUserMissionHistory(this.usernameConnecte);
   }
 
 
@@ -38,9 +35,7 @@ export class ProfileComponent implements OnInit {
     this.restservice.GetUser().subscribe(
       (data) => {
         this.user = data;
-
         console.log(this.user);
-
       },
     );
   }
@@ -49,9 +44,7 @@ export class ProfileComponent implements OnInit {
     this.restservice.getUserbyUsernameConnecte(m).subscribe(
       (data) => {
         this.userbyusername = data;
-
         console.log(this.userbyusername);
-
       },
     );
   }
@@ -74,10 +67,6 @@ export class ProfileComponent implements OnInit {
       },
     );
   }
-
-
-
- 
 
   
 }

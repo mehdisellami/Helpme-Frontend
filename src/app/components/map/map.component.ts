@@ -158,7 +158,8 @@ apiwalkingMapbox(lnga,lata,lngb,latb) {
         this.RestMission.affecterUserMissionPUT(i,j,user).subscribe(
           (data)=>{
             const type = 'success';
-            alert("vous avez ajouté à la mission")
+            alert("Vous avez pris en charge la mission");
+            window.open("/app-missions","_self");
           return data;
         },
         (err)=>{
