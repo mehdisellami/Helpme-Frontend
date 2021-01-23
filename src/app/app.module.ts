@@ -23,6 +23,7 @@ import { httpInterceptorProviders } from './auth/auth-interceptor';
 import { MissionsComponent } from './components/missions/missions.component';
 import { FeedBackMissionComponent } from './components/feed-back-mission/feed-back-mission.component';
 import { ProfilComponent } from './components/profil/profil.component';
+import { EditmissionComponent } from './components/editmission/editmission.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ProfilComponent } from './components/profil/profil.component';
     HomeComponent,
     MissionsComponent,
     FeedBackMissionComponent,
-    ProfilComponent
+    ProfilComponent,
+    EditmissionComponent
   ],
   imports: [
     BrowserModule,

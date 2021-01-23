@@ -11,6 +11,7 @@ import { PassworduserComponent } from './components/passworduser/passworduser.co
 import { ProfilComponent } from './components/profil/profil.component';
 import { MissionsComponent } from './components/missions/missions.component';
 import { FeedBackMissionComponent } from './components/feed-back-mission/feed-back-mission.component';
+import { EditmissionComponent } from './components/editmission/editmission.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'app-profil', component: ProfilComponent},
   { path: 'feedback-mission', component: FeedBackMissionComponent},
-  { path: 'app-missions', component: MissionsComponent}
+  { path: 'app-missions', component: MissionsComponent},
+  { path: 'app-editmission/:idMission', component: EditmissionComponent}
 ];
 
 @NgModule({

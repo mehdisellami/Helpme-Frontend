@@ -23,10 +23,13 @@ export class MissionService {
     return this.http.get<Object>(this.urlgetmission);
   }
 
+  RecupMission(id){
+    return this.http.get<Object>("https://helpmebackend.herokuapp.com/getmission/"+id);
+  }
+
   GetMissionenAttente(){
     return this.http.get<Object>(this.urlgetmissionenAttentePourMap);
   }
-
 
   DeleteMission(idmission){
     return this.http.delete("https://helpmebackend.herokuapp.com/deletemission/" + idmission);
@@ -41,29 +44,20 @@ export class MissionService {
     ;
   }
 
-
-
  affecterUserMissionPUT(i,j,user){
-
-
   return this.http.put("https://helpmebackend.herokuapp.com/affecterUserMission/"+i+"/"+j,user);
  }
 
  getUserMissionHistory(usernameUsertoFindHistoryMission){
-
   return this.http.get<Mission>("https://helpmebackend.herokuapp.com/findUserMissionHistory/" + usernameUsertoFindHistoryMission);
-
  }
 
  MissionRating(i,j,user){
-
   return this.http.put("https://helpmebackend.herokuapp.com/feedBackMission/"+i+"/"+j,user);
-  
  }
 
+  EditMission(unemission){
+    return this.http.post<Mission>("https://helpmebackend.herokuapp.com/editmission/",unemission);
+  }
 
 }
-
-
-
-

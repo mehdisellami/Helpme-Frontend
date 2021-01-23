@@ -3,11 +3,10 @@
   <thead>
     <tr>
       <th>Nom Mission </th>
-      <th>Date</th>
+      <th class="date">Date</th>
       <th>Adresse</th>
       <th>Description</th>
       <th>Etat Mission</th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -20,6 +19,7 @@
       <td *ngIf="x.statusMission=='ENATTENTE'"><span class="badge badge-warning">{{x.statusMission}}</span></td>
       <td *ngIf="x.statusMission=='EnCours'"><span class="badge badge-primary">{{x.statusMission}}</span></td>
       <td *ngIf="x.statusMission=='Termine'"><span class="badge badge-success">{{x.statusMission}}</span></td>
+      <td><button (click)="editmission(x.idMission)" class="btn btn-danger">Modifier</button></td>
       <td><button (click)="delmission(x.idMission)" class="btn btn-danger">Supprimer</button></td>
       </tr>
   </tbody>

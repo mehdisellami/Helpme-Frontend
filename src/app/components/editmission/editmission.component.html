@@ -1,0 +1,30 @@
+<div style="text-align: center;"><h1>Mettre à jour une mission {{idMission}} </h1></div><br>
+
+<form name="form">
+    <div>
+        <label for="">Nom de la mission</label>
+        <input type="text"  name="typemission" [(ngModel)]="missionrecup.nomMission">
+    </div>
+    <div>
+        <label for="">Adresse</label>
+        <input type="text"  name="adresse" [(ngModel)]="missionrecup.adressMission">
+    </div>
+    <div>
+        <label for="">Date</label>
+        <input type="date"  name="date" [(ngModel)]="missionrecup.dateMission">
+    </div>
+    <!--
+    <div>
+        <label for="">Téléphone</label>
+        <input type="tel"  name="telephone" pattern="^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$"  [(ngModel)]="missionrecup.tel">
+    </div>
+    -->
+    <div>
+        <label for="">Description</label>
+        <textarea  name="description" [(ngModel)]="missionrecup.description"></textarea>
+    </div>
+    <div style="text-align: center;">
+        <button type="submit" class="btn btn-primary" (click)="EditMission()">Modifier</button>
+        <button type="reset" class="btn btn-primary">Réinitialiser</button>
+    </div>
+</form>

@@ -38,6 +38,10 @@ export class MissionsComponent implements OnInit {
     );  
   }
 
+  editmission(id):void{
+      window.open("/app-editmission/"+id,"_self");   
+  }
+
   reloadPage() {
     window.location.reload();
   }

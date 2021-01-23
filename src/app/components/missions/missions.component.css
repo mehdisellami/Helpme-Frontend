@@ -8,3 +8,7 @@ table {
     position: center;
     padding-top: 100px;
 }
+
+.date {
+    width: 125px;
+}

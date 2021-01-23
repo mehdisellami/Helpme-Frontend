@@ -11,7 +11,7 @@ export class CreationMissionComponent implements OnInit {
 
   missionInstance:Mission = new Mission();
 
-  constructor( private mission:MissionService) {}
+  constructor(private mission:MissionService) {}
 
   ngOnInit(): void {}
 
