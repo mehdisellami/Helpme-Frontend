@@ -20,7 +20,7 @@
         &nbsp; &nbsp; &nbsp; <button type="button" class="btn btn-info" (click)="filter()">Filtrer !</button>
       </div>
       <hr>
-      <mgl-map [style]="'mapbox://styles/mapbox/streets-v11'"   [zoom]="[16.6]"    > 
+      <mgl-map [style]="'mapbox://styles/mapbox/streets-v11'"   [zoom]="[16.6]"     > 
         <!-- Bouttons de navigations -->
         <mgl-control mglNavigation  ></mgl-control>
         
@@ -36,11 +36,46 @@
             <mgl-popup  [marker]="missionmarker" >{{mission[i].nomMission}},{{mission[i].adressMission}}</mgl-popup>
           </div>
           <div *ngIf="this.distanceTab[i] < 2   ">
-            <mgl-marker #missionmarker [lngLat]="[l.features[0].center[0], l.features[0].center[1]]" ></mgl-marker>
+            <mgl-marker #missionmarker (click)="avancer()" [lngLat]="[l.features[0].center[0], l.features[0].center[1]]" ></mgl-marker>
               <!-- Popup mission dans la map -->
               <mgl-popup  [marker]="missionmarker" >{{mission[i].nomMission}},{{mission[i].adressMission}}</mgl-popup>
           </div>
+
+
+          <mgl-layer  #missionmarker
+          id="route"
+          type="line"
+          [source]="{
+            'type': 'geojson',
+            'data': {
+                'type': 'Feature',
+                'properties': {},
+                'geometry': {
+                    'type': 'LineString',
+                    'coordinates': [
+                        [this.maposition[0], this.maposition[1]],
+                        [this.longlat[i].features[0]?.center[0], this.longlat[i].features[0]?.center[1]]
+                        
+                    ]
+                }
+            }
+          }"
+          [layout]="{
+            'line-join': 'round',
+            'line-cap': 'round'
+          }"
+          [paint]="{
+            'line-color': '#888',
+            'line-width': 8
+          }"
+        >
+        </mgl-layer>
+
+        
         </div>
+
+       
+
       </mgl-map>
     </div>
       
@@ -91,9 +126,7 @@
   </div>
 </div>
   
-<div *ngFor="let x of secondeminute">
-  {{x}}
-</div>
+
 
    <td><button  class="btn btn-success" (click)="secToMin()">Accept</button>      
 

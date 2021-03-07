@@ -44,6 +44,7 @@ public tokenUsername :any;
   public MintoSec : any;
   CheckedBx=false;
 
+  
   switchon(ev){
     this.CheckedBx=true;
   }
@@ -62,6 +63,8 @@ public tokenUsername :any;
 
     this.tokenUsername=this.tokenStorage.getUsername();
     this.getUserIdbyUsername(this.tokenUsername);
+
+    
 
 
     
@@ -173,6 +176,12 @@ apiwalkingMapbox(lnga,lata,lngb,latb) {
 
 
 
+  
+  avancer(){
+
+    console.log("hello")
+
+  }
 
 
   

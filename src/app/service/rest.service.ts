@@ -7,11 +7,11 @@ import { User } from '../components/newuser/user.model';
   providedIn: 'any'})
 export class RestService {
 
-  public url="https://helpmebackend.herokuapp.com/test";
-  public urlpostuser="https://helpmebackend.herokuapp.com/api/auth/singup";
-  public urlgetuser="https://helpmebackend.herokuapp.com/listeUser";
+  public url="http://localhost:8080/test";
+  public urlpostuser="http://localhost:8080/api/auth/singup";
+  public urlgetuser="http://localhost:8080/listeUser";
 
-  public urlgetuserConnecteByUsername="https://helpmebackend.herokuapp.com/listeUser";
+  public urlgetuserConnecteByUsername="http://localhost:8080/listeUser";
 
  
   constructor(private http: HttpClient) {}
@@ -29,11 +29,11 @@ export class RestService {
   }
 
   getIDUserConnecte(username){
-    return this.http.get<User>("https://helpmebackend.herokuapp.com/findidUserbyUsername/" + username);
+    return this.http.get<User>("http://localhost:8080/findidUserbyUsername/" + username);
   }
 
   getUserbyUsernameConnecte(username) {
 
-    return this.http.get<User>("https://helpmebackend.herokuapp.com/findUserbyUsername/" + username);
+    return this.http.get<User>("http://localhost:8080/findUserbyUsername/" + username);
   }
 }

@@ -12,6 +12,8 @@ import { ProfilComponent } from './components/profil/profil.component';
 import { MissionsComponent } from './components/missions/missions.component';
 import { FeedBackMissionComponent } from './components/feed-back-mission/feed-back-mission.component';
 import { EditmissionComponent } from './components/editmission/editmission.component';
+import { CommentaireMissionComponent } from './components/commentaire-mission/commentaire-mission.component';
+import { MaptestComponent } from './maptest/maptest.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,7 @@ const routes: Routes = [
   },
   { path: 'app-map', component: MapComponent },
   { path: 'app-creation-mission', component: CreationMissionComponent},
+  { path: 'maptest', component: MaptestComponent},
   { path: 'login', component: LoginuserComponent},
   { path: 'register', component: NewuserComponent},
   { path: 'lostpassword', component: PassworduserComponent},
@@ -28,6 +31,7 @@ const routes: Routes = [
   { path: 'app-profil', component: ProfilComponent},
   { path: 'feedback-mission', component: FeedBackMissionComponent},
   { path: 'app-missions', component: MissionsComponent},
+  { path: 'app-commentaire', component: CommentaireMissionComponent},
   { path: 'app-editmission/:idMission', component: EditmissionComponent}
 ];
 

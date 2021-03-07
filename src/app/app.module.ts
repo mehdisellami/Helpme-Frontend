@@ -24,6 +24,8 @@ import { MissionsComponent } from './components/missions/missions.component';
 import { FeedBackMissionComponent } from './components/feed-back-mission/feed-back-mission.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { EditmissionComponent } from './components/editmission/editmission.component';
+import { CommentaireMissionComponent } from './components/commentaire-mission/commentaire-mission.component';
+import { MaptestComponent } from './maptest/maptest.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { EditmissionComponent } from './components/editmission/editmission.compo
     MissionsComponent,
     FeedBackMissionComponent,
     ProfilComponent,
-    EditmissionComponent
+    EditmissionComponent,
+    CommentaireMissionComponent,
+    MaptestComponent
   ],
   imports: [
     BrowserModule,
