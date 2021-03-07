@@ -15,42 +15,15 @@ export class CommentaireMissionComponent implements OnInit {
 
   missionInstance:Mission = new Mission();
 
-  data;
-  public historyMissionUserconnecte:any=[];
-
-  public usernameConnecte :any;
-  selectedValue1 =  <any> {};
-  value2 : any;
-
-
-
-
-
-  constructor(private  missionService: MissionService,private tokenStorage: TokenStorageService) {
+  constructor(private  missionService: MissionService) {
   }
 
   ngOnInit(): void {
-
-    this.usernameConnecte=this.tokenStorage.getUsername();
-    this.getUserMissionHistory(this.usernameConnecte);
   }
-  getUserMissionHistory(m){
-    this.missionService.getUserMissionHistory(m).subscribe(
-      (data )=>{
-        this.historyMissionUserconnecte=data;
-        console.log(this.historyMissionUserconnecte);
-      },
-    );
-  }
+ 
 
-  Commentaire(comForm: NgForm) {
-    if (comForm.valid) {
-      this.data = comForm.value;
-    }
-  }
-
-    Faireuncommentaire(m){
-      this.missionService.Mettreuncommentaire(m).subscribe(
+    Faireuncommentaire(){
+      this.missionService.Mettreuncommentaire(this.missionInstance).subscribe(
         (data)=>{
           const type = 'success';
           alert("Commentaire créer !");

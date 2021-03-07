@@ -3,4 +3,5 @@ export class Mission{
     adressMission:String
     dateMission:Date
     description:String
+    commentaire:String
 }
