@@ -12,6 +12,7 @@ import { ProfilComponent } from './components/profil/profil.component';
 import { MissionsComponent } from './components/missions/missions.component';
 import { FeedBackMissionComponent } from './components/feed-back-mission/feed-back-mission.component';
 import { EditmissionComponent } from './components/editmission/editmission.component';
+import { CommentaireMissionComponent } from './components/commentaire-mission/commentaire-mission.component';
 
 const routes: Routes = [
   {
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'app-profil', component: ProfilComponent},
   { path: 'feedback-mission', component: FeedBackMissionComponent},
   { path: 'app-missions', component: MissionsComponent},
-  { path: 'app-editmission/:idMission', component: EditmissionComponent}
+  { path: 'app-editmission/:idMission', component: EditmissionComponent},
+  { path: 'commentaire-mission',component: CommentaireMissionComponent}
 ];
 
 @NgModule({

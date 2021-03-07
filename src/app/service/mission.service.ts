@@ -59,5 +59,14 @@ export class MissionService {
   EditMission(unemission){
     return this.http.post<Mission>("https://helpmebackend.herokuapp.com/editmission/",unemission);
   }
+  Mettreuncommentaire(unemission){
+    return this.http.put<Mission>("https://helpmebackend.herokuapp.com/mettreunCommentaire/" ,unemission)
+  }
+
+  
+  
+  Missionterminer(i){
+    return this.http.put("https://helpmebackend.herokuapp.com/Missiontermine/", i);
+  }
 
 }

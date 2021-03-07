@@ -49,6 +49,7 @@
           <td *ngIf="x.feedbackNote=='ETOILE5'">&#11088;&#11088;&#11088;&#11088;&#11088;</td>
           <td> {{x.commentaire}}</td>
           <td><a routerLink="/feedback-mission"> Cliquez ici</a></td>
+          <button (click)="commentaireMission(x.idMission)"> Commentaire</button>
         </tr>
       </tbody>
     </table>

@@ -21,6 +21,7 @@
       <td *ngIf="x.statusMission=='Termine'"><span class="badge badge-success">{{x.statusMission}}</span></td>
       <td><button (click)="editmission(x.idMission)" class="btn btn-danger">Modifier</button></td>
       <td><button (click)="delmission(x.idMission)" class="btn btn-danger">Supprimer</button></td>
+      <td><button (click)="missionterminer(x.idMission)" class="btn btn-danger"> Fin</button> </td>
       </tr>
   </tbody>
 </table>

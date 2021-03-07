@@ -62,5 +62,9 @@ export class ProfilComponent implements OnInit {
       },
     );
   }
+
+  commentaireMission(id):void{
+    window.open("/commentaire-mission/","_self");
+  }
   
 }
