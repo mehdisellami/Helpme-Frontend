@@ -21,7 +21,7 @@ export class MissionService {
   }
 
   RecupMission(id){
-    return this.http.get<Object>("http://localhost:8080/getmission/"+id);
+    return this.http.get<Object>("https://helpmebackend.herokuapp.com/getmission/"+id);
   }
 
   GetMissionenAttente(){
