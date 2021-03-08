@@ -44,17 +44,17 @@ export class MissionService {
     ;
   }
 
- affecterUserMissionPUT(i,j,user){
-  return this.http.put("https://helpmebackend.herokuapp.com/affecterUserMission/"+i+"/"+j,user);
- }
+  affecterUserMissionPUT(i,j,user){
+    return this.http.put("https://helpmebackend.herokuapp.com/affecterUserMission/"+i+"/"+j,user);
+  }
 
- getUserMissionHistory(usernameUsertoFindHistoryMission){
-  return this.http.get<Mission>("https://helpmebackend.herokuapp.com/findUserMissionHistory/" + usernameUsertoFindHistoryMission);
- }
+  getUserMissionHistory(usernameUsertoFindHistoryMission){
+    return this.http.get<Mission>("https://helpmebackend.herokuapp.com/findUserMissionHistory/" + usernameUsertoFindHistoryMission);
+  }
 
- MissionRating(i,j,user){
-  return this.http.put("https://helpmebackend.herokuapp.com/feedBackMission/"+i+"/"+j,user);
- }
+  MissionRating(i,j,user){
+    return this.http.put("https://helpmebackend.herokuapp.com/feedBackMission/"+i+"/"+j,user);
+  }
 
   EditMission(unemission){
     return this.http.post<Mission>("https://helpmebackend.herokuapp.com/editmission/",unemission);
@@ -63,10 +63,8 @@ export class MissionService {
     return this.http.put<Mission>("https://helpmebackend.herokuapp.com/mettreunCommentaire/" ,unemission)
   }
 
-  
-  
-  Missionterminer(i){
-    return this.http.put("https://helpmebackend.herokuapp.com/Missiontermine/", i);
+  Missionterminer(idmission){
+    return this.http.put("http://localhost:8080/Missiontermine/" + idmission, idmission);
   }
 
 }
