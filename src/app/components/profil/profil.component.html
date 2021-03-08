@@ -32,7 +32,6 @@
           <th>Statut</th>
           <th>Note</th>
           <th>Commentaire</th>
-          <th>Donner un feedback</th>
         </tr>
       </thead>
       <tbody *ngFor="let x of historyMissionUserconnecte">
@@ -48,8 +47,7 @@
           <td *ngIf="x.feedbackNote=='ETOILE4'">&#11088;&#11088;&#11088;&#11088;</td>
           <td *ngIf="x.feedbackNote=='ETOILE5'">&#11088;&#11088;&#11088;&#11088;&#11088;</td>
           <td> {{x.commentaire}}</td>
-          <td><a routerLink="/feedback-mission"> Cliquez ici</a></td>
-          <button (click)="commentaireMission(x.idMission)"> Commentaire</button>
+          <td><button (click)="Feedback(x.idMission)">Laisser un feedback</button></td>
         </tr>
       </tbody>
     </table>

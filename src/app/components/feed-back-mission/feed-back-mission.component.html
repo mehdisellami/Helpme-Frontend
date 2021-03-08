@@ -1,17 +1,14 @@
 <div style="text-align: center;"><h1>Donner un feedback</h1></div><br>
 
-<form name="form" (ngSubmit)="MissionRatingStars(selectedValue1,selectedValue2,0)">
+<form name="form">
     <div>
-        <label for="">Mission</label>
-        <select name="projet" id="projet" [(ngModel)]="selectedValue1" style="width: 200px;">
-            <option *ngFor="let x of historyMissionUserconnecte" [ngValue]="x.idMission">
-              {{x.nomMission}}</option>
-          </select>
+        <label for="">Nom de la mission</label>
+        <input type="text"  name="typemission" [(ngModel)]="missionrecup.nomMission">
     </div>
 
     <div>
-        <label for="">Note (de 1 à 5)</label>
-        <select type="text" id="nbetoile" name="nbetoile" [(ngModel)]="selectedValue2" style="width: 200px;">
+        <label for="">Note</label>
+        <select type="text" id="nbetoile" name="nbetoile" [(ngModel)]="selectedValue" style="width: 200px;">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -20,8 +17,13 @@
           </select>
     </div>
 
+    <div>
+        <label for=""> Commentaire</label>
+        <input type="textarea" name="commentaire" [(ngModel)]="missionrecup.commentaire">
+    </div>
+
     <div style="text-align: center;">
-        <button type="submit" class="btn btn-primary">Envoyer</button>
+        <button type="submit" class="btn btn-primary" (click)="MissionRatingStars(selectedValue)">Envoyer</button>
         <button type="reset" class="btn btn-primary">Réinitialiser</button>
     </div>
 </form>
