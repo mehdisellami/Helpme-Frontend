@@ -67,4 +67,8 @@ export class MissionService {
     return this.http.put("http://localhost:8080/Missiontermine/" + idmission, idmission);
   }
 
+  Annulerfin(idmission){
+    return this.http.put("http://localhost:8080/annulerFinMission/" + idmission, idmission);
+  }
+
 }

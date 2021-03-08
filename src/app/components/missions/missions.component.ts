@@ -53,6 +53,17 @@ export class MissionsComponent implements OnInit {
     );  
   }
 
+  annulerfin(id):void{
+    this.missionservice.Annulerfin(id)
+    .subscribe( data => {
+      alert("Vous avez annulé la fin de la mission " + id);
+      this.reloadPage(); 
+    },
+    (err)=>{
+    }
+    );  
+  }
+
   reloadPage() {
     window.location.reload();
   }
