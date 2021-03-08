@@ -43,6 +43,15 @@ export class MissionService {
     return this.http.get ("https://api.mapbox.com/directions/v5/mapbox/walking/"+lngA+","+latA+";"+lngB+","+latB+"?approaches=unrestricted;curb&access_token=pk.eyJ1IjoibWVoZGlzZWxsYW1pIiwiYSI6ImNrZ2t5bnQ3cTA2NDAyeW8xMzBoanVnMm8ifQ.UuXfzm__C3HRsGXfAktk3w")
     ;
   }
+  apiDrivingMapbox(lngA,latA,lngB,latB) {
+    return this.http.get ("https://api.mapbox.com/directions/v5/mapbox/driving/"+lngA+","+latA+";"+lngB+","+latB+"?approaches=unrestricted;curb&access_token=pk.eyJ1IjoibWVoZGlzZWxsYW1pIiwiYSI6ImNrZ2t5bnQ3cTA2NDAyeW8xMzBoanVnMm8ifQ.UuXfzm__C3HRsGXfAktk3w")
+    ;
+  }
+
+  apiCyclingMapbox(lngA,latA,lngB,latB) {
+    return this.http.get ("https://api.mapbox.com/directions/v5/mapbox/cycling/"+lngA+","+latA+";"+lngB+","+latB+"?approaches=unrestricted;curb&access_token=pk.eyJ1IjoibWVoZGlzZWxsYW1pIiwiYSI6ImNrZ2t5bnQ3cTA2NDAyeW8xMzBoanVnMm8ifQ.UuXfzm__C3HRsGXfAktk3w")
+    ;
+  }
 
  affecterUserMissionPUT(i,j,user){
 
@@ -61,6 +70,15 @@ export class MissionService {
 
   EditMission(unemission){
     return this.http.post<Mission>("http://localhost:8080/editmission/",unemission);
+  }
+  Mettreuncommentaire(unemission){
+    return this.http.put<Mission>("https://helpmebackend.herokuapp.com/mettreunCommentaire/" ,unemission)
+  }
+
+  
+  
+  Missionterminer(i){
+    return this.http.put("http://localhost:8080/Missiontermine/", i,i);
   }
 
 }

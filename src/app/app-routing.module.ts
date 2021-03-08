@@ -31,8 +31,8 @@ const routes: Routes = [
   { path: 'app-profil', component: ProfilComponent},
   { path: 'feedback-mission', component: FeedBackMissionComponent},
   { path: 'app-missions', component: MissionsComponent},
-  { path: 'app-commentaire', component: CommentaireMissionComponent},
-  { path: 'app-editmission/:idMission', component: EditmissionComponent}
+  { path: 'app-editmission/:idMission', component: EditmissionComponent},
+  { path: 'commentaire-mission',component: CommentaireMissionComponent}
 ];
 
 @NgModule({

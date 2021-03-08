@@ -1,8 +1,14 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { environment } from 'src/environments/environment';
 import { AppModule } from '../app.module';
+import { TokenStorageService } from '../auth/token-storage.service';
+import { MissionService } from '../service/mission.service';
+import { RestService } from '../service/rest.service';
+
+
 
 @Component({
   selector: 'app-maptest',
@@ -12,8 +18,17 @@ import { AppModule } from '../app.module';
 export class MaptestComponent implements OnInit {
 
   map: mapboxgl.Map;
+  public mission :any= [];
+  public longlat:any=[];
+  public maposition:any=[];
+public adress:any;
+public longitude:any=[];
+public latitude:any=[];
 
-  constructor() { }
+  
+
+
+  constructor(public RestMission : MissionService, private tokenStorage: TokenStorageService ,public restservice :RestService ) { }
 
   ngOnInit(): void {
 
@@ -31,18 +46,85 @@ export class MaptestComponent implements OnInit {
       'Construction on the Washington Monument began in 1848.'
       );
 
+      console.log(this.longitude)
 
+      console.log(this.latitude)
+
+        
+        
     var marker = new mapboxgl.Marker({
       draggable: false
     })
-      .setLngLat([2.390055, 48.8077584])
+    
+      .setLngLat([ this.longitude, this.latitude])
+      
+     
       .setPopup(popup)
       .addTo(this.map);
+      
 
+
+
+      
+
+      this.navigationControl();
+      this.LocaliserUtilisateurMapbox();
+      this.getMissionenAttente();
+
+      
 
      
   }
 
+
+  navigationControl(){
+    this.map.addControl(new mapboxgl.NavigationControl());
+
+  }
+
+  LocaliserUtilisateurMapbox(){
+    this.map.addControl(
+      new mapboxgl.GeolocateControl({
+      positionOptions: {
+      enableHighAccuracy: true
+      },
+      trackUserLocation: true
+      })
+      );
+  }
+
+
+  getMissionenAttente() {
+    this.RestMission.GetMissionenAttente().subscribe(
+     (data )=>{
+         this.mission=data;   
+         
+        this.AdresstoLongLAt(this.mission.adressMission)
+
+         
+           console.log(data);
+         },
+     );
+   }
+ 
+   AdresstoLongLAt(m){
+     var x=0;
+     var y=1;
+     for (let i in this.mission){
+       this.RestMission.getLongLat(this.mission[i]?.adressMission).subscribe(
+       data =>{
+         this.longlat.push(data);
+         this.longitude.push(this.longlat[i]?.features[0]?.center[x])
+         this.latitude.push(this.longlat[i]?.features[0]?.center[y])
+     
+         
+       },);
+     }
+     console.log(this.longlat);
+     
+   }
+
+   
   
 
 

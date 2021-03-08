@@ -29,7 +29,9 @@ public tokenUsername :any;
 
 
   public mission :any= [];
+  public apiMaboxWalkingTable :any= [];
   public apiMaboxDrivingTable :any= [];
+  public apiMaboxCyclingTable :any= [];
   public longlat:any=[];
   public maposition:any=[];
   public distanceTab:any=[];
@@ -39,7 +41,11 @@ public tokenUsername :any;
   public up_forms:any;
   
 
+  public secondeminuteWalking:any=[];
   public secondeminute:any=[];
+  public secondeminute1:any=[];
+  public secondeminute3:any=[];
+
 
   public MintoSec : any;
   CheckedBx=false;
@@ -64,7 +70,6 @@ public tokenUsername :any;
     this.tokenUsername=this.tokenStorage.getUsername();
     this.getUserIdbyUsername(this.tokenUsername);
 
-    
 
 
     
@@ -84,8 +89,11 @@ public tokenUsername :any;
   secToMin(){
     for (let i in this.mission){
      // console.log(Math.round((this.apiMaboxDrivingTable[i]?.routes[0]?.duration)/60));
-      this.secondeminute.push(Math.round((this.apiMaboxDrivingTable[i]?.routes[0]?.duration)/60));
-      
+      this.secondeminute.push(Math.round((this.apiMaboxWalkingTable[i]?.routes[0]?.duration)/60));
+      this.secondeminute1.push(Math.round((this.apiMaboxDrivingTable[i]?.routes[0]?.duration)/60));
+      this.secondeminute3.push(Math.round((this.apiMaboxCyclingTable[i]?.routes[0]?.duration)/60));
+
+
     }
    
   }
@@ -118,7 +126,9 @@ public tokenUsername :any;
         this.longlat.push(data);
         this.distance(this.longlat[i]?.features[0].center[1],this.longlat[i]?.features[0].center[0],this.maposition[1],this.maposition[0]);
         this.apiwalkingMapbox(this.maposition[0],this.maposition[1],this.longlat[i]?.features[0].center[0],this.longlat[i]?.features[0].center[1])  ;
-        
+        this.apiDrivingMapbox(this.maposition[0],this.maposition[1],this.longlat[i]?.features[0].center[0],this.longlat[i]?.features[0].center[1])
+        this.apiCyclingMapbox(this.maposition[0],this.maposition[1],this.longlat[i]?.features[0].center[0],this.longlat[i]?.features[0].center[1])
+
       },);
     }
     console.log(this.longlat);
@@ -136,8 +146,44 @@ apiwalkingMapbox(lnga,lata,lngb,latb) {
      (data )=>{
 
       
-       this.apiMaboxDrivingTable.push(data);
+       this.apiMaboxWalkingTable.push(data);
        //console.log(this.apiMaboxDrivingTable);
+             
+       },
+
+   );
+   
+   
+ }
+
+ apiDrivingMapbox(lnga,lata,lngb,latb) {
+  
+ 
+  this.RestMission.apiDrivingMapbox(lnga,lata,lngb,latb).subscribe(
+
+     (data )=>{
+
+      
+       this.apiMaboxDrivingTable.push(data);
+       console.log(this.apiMaboxDrivingTable);
+             
+       },
+
+   );
+   
+   
+ }
+
+ apiCyclingMapbox(lnga,lata,lngb,latb) {
+  
+ 
+  this.RestMission.apiCyclingMapbox(lnga,lata,lngb,latb).subscribe(
+
+     (data )=>{
+
+      
+       this.apiMaboxCyclingTable.push(data);
+       console.log(this.apiMaboxDrivingTable);
              
        },
 

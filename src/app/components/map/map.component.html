@@ -92,6 +92,8 @@
                   <th>Adresse</th>
                   <th>Distance</th>
                   <th>Durée en Marchant</th>
+                  <th>Durée par voiture</th>
+                  <th>Durée par vélo</th>
                   <th>Accepter?</th>
             </tr>
           </thead>
@@ -103,6 +105,8 @@
               <td >{{mission[i].adressMission}}</td>
               <td>{{x}} KM</td>
               <td>{{secondeminute[i]}} Minutes</td>
+              <td>{{secondeminute1[i]}} Minutes</td>
+              <td>{{secondeminute3[i]}} Minutes</td>
              <td><button type="button" class="btn btn-success"  (click)="affecterUserMission(useronnecte,mission[i].idMission,0)">Accepter</button> </td>
            
               </tr>
@@ -116,6 +120,8 @@
                 <td >{{mission[i].adressMission}}</td>
                 <td>{{x}} KM</td>
                 <td>{{secondeminute[i]}} Minutes</td>
+                <td>{{secondeminute1[i]}} Minutes</td>
+                <td>{{secondeminute3[i]}} Minutes</td>
                <td><button type="button" class="btn btn-success" (click)="affecterUserMission(useronnecte,mission[i].idMission,0)">Accepter</button> </td>
              
                 </tr>

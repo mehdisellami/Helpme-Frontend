@@ -42,6 +42,19 @@ export class MissionsComponent implements OnInit {
       window.open("/app-editmission/"+id,"_self");   
   }
 
+
+
+  missionterminer(id):void{
+    this.missionservice.Missionterminer(id)
+    .subscribe( data => {
+      alert("Mission " + id + " terminée");
+      this.reloadPage(); 
+    },
+    (err)=>{
+    }
+    );  
+  }
+
   reloadPage() {
     window.location.reload();
   }
