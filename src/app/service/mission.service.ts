@@ -8,9 +8,6 @@ import { map } from 'rxjs/operators';
 @Injectable({providedIn: 'any'})
 export class MissionService {
 
-  public urlpostmission="http://localhost:8080/newmission";
-  public urlgetmission="http://localhost:8080/listeMission";
-  public urlgetmissionenAttentePourMap="http://localhost:8080/listeMissionEnAttente";
   public longlat:any=[]; 
 
   constructor(private http: HttpClient){}
@@ -32,7 +29,7 @@ export class MissionService {
   }
 
   DeleteMission(idmission){
-    return this.http.delete("http://localhost:8080/deletemission/" + idmission);
+    return this.http.delete("https://helpmebackend.herokuapp.com/deletemission/" + idmission);
   }
 
   getLongLat(adr) {
@@ -62,19 +59,19 @@ export class MissionService {
   }
 
   MissionRating(notemission,mission){
-    return this.http.put("http://localhost:8080/feedBackMission/" + notemission, mission);
+    return this.http.put("https://helpmebackend.herokuapp.com/feedBackMission/" + notemission, mission);
   }
 
   EditMission(unemission){
-    return this.http.post<Mission>("http://localhost:8080/editmission/",unemission);
+    return this.http.post<Mission>("https://helpmebackend.herokuapp.com/editmission/",unemission);
   }
 
   Missionterminer(idmission){
-    return this.http.put("http://localhost:8080/Missiontermine/" + idmission, idmission);
+    return this.http.put("https://helpmebackend.herokuapp.com/Missiontermine/" + idmission, idmission);
   }
 
   Annulerfin(idmission){
-    return this.http.put("http://localhost:8080/annulerFinMission/" + idmission, idmission);
+    return this.http.put("https://helpmebackend.herokuapp.com/annulerFinMission/" + idmission, idmission);
   }
 
 }
