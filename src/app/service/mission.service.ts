@@ -56,22 +56,6 @@ export class MissionService {
     ;
   }
 
-<<<<<<< HEAD
- affecterUserMissionPUT(i,j,user){
-
-
-  return this.http.put("http://localhost:8080/affecterUserMission/"+i+"/"+j,user);
- }
-
- getUserMissionHistory(usernameUsertoFindHistoryMission){
-
-  return this.http.get<Mission>("http://localhost:8080/findUserMissionHistory/" + usernameUsertoFindHistoryMission);
- }
-
- MissionRating(i,j,user){
-  return this.http.put("http://localhost:8080/feedBackMission/"+i+"/"+j,user);
- }
-=======
   affecterUserMissionPUT(i,j,user){
     return this.http.put("https://helpmebackend.herokuapp.com/affecterUserMission/"+i+"/"+j,user);
   }
@@ -83,7 +67,6 @@ export class MissionService {
   MissionRating(notemission,mission){
     return this.http.put("http://localhost:8080/feedBackMission/" + notemission, mission);
   }
->>>>>>> 2d897340a8e13a03f3135038653eb965467515f3
 
   EditMission(unemission){
     return this.http.post<Mission>("http://localhost:8080/editmission/",unemission);
@@ -93,15 +76,8 @@ export class MissionService {
     return this.http.put("http://localhost:8080/Missiontermine/" + idmission, idmission);
   }
 
-<<<<<<< HEAD
-  
-  
-  Missionterminer(i){
-    return this.http.put("http://localhost:8080/Missiontermine/", i,i);
-=======
   Annulerfin(idmission){
     return this.http.put("http://localhost:8080/annulerFinMission/" + idmission, idmission);
->>>>>>> 2d897340a8e13a03f3135038653eb965467515f3
   }
 
 }
