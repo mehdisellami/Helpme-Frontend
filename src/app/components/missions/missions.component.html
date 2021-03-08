@@ -21,7 +21,8 @@
       <td *ngIf="x.statusMission=='Termine'"><span class="badge badge-success">{{x.statusMission}}</span></td>
       <td><button (click)="editmission(x.idMission)" class="btn btn-danger">Modifier</button></td>
       <td><button (click)="delmission(x.idMission)" class="btn btn-danger">Supprimer</button></td>
-      <td><button (click)="missionterminer(x.idMission)" class="btn btn-danger"> Fin</button> </td>
+      <td *ngIf="x.statusMission=='Termine'"><button (click)="annulerfin(x.idMission)" class="btn btn-danger"> Annuler</button></td>
+      <td *ngIf="x.statusMission=='ACCEPTE'"><button (click)="missionterminer(x.idMission)" class="btn btn-danger"> Terminer</button> </td>
       </tr>
   </tbody>
 </table>

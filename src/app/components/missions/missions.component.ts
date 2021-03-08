@@ -42,12 +42,21 @@ export class MissionsComponent implements OnInit {
       window.open("/app-editmission/"+id,"_self");   
   }
 
-
-
   missionterminer(id):void{
     this.missionservice.Missionterminer(id)
     .subscribe( data => {
       alert("Mission " + id + " terminée");
+      this.reloadPage(); 
+    },
+    (err)=>{
+    }
+    );  
+  }
+
+  annulerfin(id):void{
+    this.missionservice.Annulerfin(id)
+    .subscribe( data => {
+      alert("Vous avez annulé la fin de la mission " + id);
       this.reloadPage(); 
     },
     (err)=>{

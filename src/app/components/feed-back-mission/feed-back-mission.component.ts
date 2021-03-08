@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from 'src/app/auth/token-storage.service';
 import { MissionService } from 'src/app/service/mission.service';
+import { Mission } from '../creation-mission/mission.model';
+import { ActivatedRoute } from '@angular/router'; 
 
 @Component({
   selector: 'app-feed-back-mission',
@@ -10,20 +12,27 @@ import { MissionService } from 'src/app/service/mission.service';
 export class FeedBackMissionComponent implements OnInit {
 
   public historyMissionUserconnecte:any=[];
-  
   public usernameConnecte :any;
+  selectedValue: any;
+  idMission: any;
+  missionrecup: any;
 
-  selectedValue1 =  <any> {};
-
-  selectedValue2 :  any;
-
-
-
-  constructor(public missionservice :MissionService,  private tokenStorage: TokenStorageService ) { }
+  constructor(private missionservice :MissionService,  private tokenStorage: TokenStorageService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.usernameConnecte=this.tokenStorage.getUsername();
     this. getUserMissionHistory(this.usernameConnecte);
+    this.idMission=this.route.snapshot.paramMap.get('idMission');
+    this.recupMission(this.idMission);
+  }
+
+  recupMission(id){
+    this.missionservice.RecupMission(id).subscribe(
+      (data)=>{
+        this.missionrecup=data;
+        console.log(this.missionservice);
+        },
+    );
   }
 
   getUserMissionHistory(m){
@@ -35,19 +44,15 @@ export class FeedBackMissionComponent implements OnInit {
     );
   }
 
-  MissionRatingStars(i,j,user)
+  MissionRatingStars(note)
   {
-    this.missionservice.MissionRating(i,j,user).subscribe(
+    this.missionservice.MissionRating(note,this.missionrecup).subscribe(
       (data)=>{
-        const type = 'success';
         alert("Merci pour votre Avis !");
         window.open("/app-profil","_self");
       return data;
     },
-    (err)=>{
-      alert("ERROR");
-     
-    }
-  );
+    (err)=>{alert("ERROR" + " " + note + " " + this.missionrecup.commentaire);}
+    );
   }
 }

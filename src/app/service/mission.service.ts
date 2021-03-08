@@ -8,19 +8,22 @@ import { map } from 'rxjs/operators';
 @Injectable({providedIn: 'any'})
 export class MissionService {
 
+<<<<<<< HEAD
   public urlpostmission="http://localhost:8080/newmission";
   public urlgetmission="http://localhost:8080/listeMission";
   public urlgetmissionenAttentePourMap="http://localhost:8080/listeMissionEnAttente";
+=======
+>>>>>>> 2d897340a8e13a03f3135038653eb965467515f3
   public longlat:any=[]; 
 
   constructor(private http: HttpClient){}
 
   PostMission(unemission){
-    return this.http.post<Mission>(this.urlpostmission,unemission);
+    return this.http.post<Mission>("https://helpmebackend.herokuapp.com/newmission",unemission);
   }
 
   GetMission(){
-    return this.http.get<Object>(this.urlgetmission);
+    return this.http.get<Object>("https://helpmebackend.herokuapp.com/listeMission");
   }
 
   RecupMission(id){
@@ -28,7 +31,7 @@ export class MissionService {
   }
 
   GetMissionenAttente(){
-    return this.http.get<Object>(this.urlgetmissionenAttentePourMap);
+    return this.http.get<Object>("https://helpmebackend.herokuapp.com/listeMissionEnAttente");
   }
 
   DeleteMission(idmission){
@@ -53,6 +56,7 @@ export class MissionService {
     ;
   }
 
+<<<<<<< HEAD
  affecterUserMissionPUT(i,j,user){
 
 
@@ -67,18 +71,37 @@ export class MissionService {
  MissionRating(i,j,user){
   return this.http.put("http://localhost:8080/feedBackMission/"+i+"/"+j,user);
  }
+=======
+  affecterUserMissionPUT(i,j,user){
+    return this.http.put("https://helpmebackend.herokuapp.com/affecterUserMission/"+i+"/"+j,user);
+  }
+
+  getUserMissionHistory(usernameUsertoFindHistoryMission){
+    return this.http.get<Mission>("https://helpmebackend.herokuapp.com/findUserMissionHistory/" + usernameUsertoFindHistoryMission);
+  }
+
+  MissionRating(notemission,mission){
+    return this.http.put("http://localhost:8080/feedBackMission/" + notemission, mission);
+  }
+>>>>>>> 2d897340a8e13a03f3135038653eb965467515f3
 
   EditMission(unemission){
     return this.http.post<Mission>("http://localhost:8080/editmission/",unemission);
   }
-  Mettreuncommentaire(unemission){
-    return this.http.put<Mission>("https://helpmebackend.herokuapp.com/mettreunCommentaire/" ,unemission)
+
+  Missionterminer(idmission){
+    return this.http.put("http://localhost:8080/Missiontermine/" + idmission, idmission);
   }
 
+<<<<<<< HEAD
   
   
   Missionterminer(i){
     return this.http.put("http://localhost:8080/Missiontermine/", i,i);
+=======
+  Annulerfin(idmission){
+    return this.http.put("http://localhost:8080/annulerFinMission/" + idmission, idmission);
+>>>>>>> 2d897340a8e13a03f3135038653eb965467515f3
   }
 
 }

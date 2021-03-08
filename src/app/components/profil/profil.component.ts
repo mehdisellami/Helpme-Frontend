@@ -63,20 +63,8 @@ export class ProfilComponent implements OnInit {
     );
   }
 
-  commentaireMission(id):void{
-    window.open("/commentaire-mission/","_self");
+  Feedback(id):void{
+    window.open("/feedback-mission/"+id,"_self");
   }
 
-   missiontermine(id){
-    this.missionservice.Missionterminer(id).subscribe(
-      (data) =>{
-        const type = 'success';
-        alert("Mission terminer");
-        return data;
-      },
-      (err)=>{alert("ERROR");
-      }
-    );
-  }
-  
 }

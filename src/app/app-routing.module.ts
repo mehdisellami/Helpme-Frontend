@@ -12,8 +12,11 @@ import { ProfilComponent } from './components/profil/profil.component';
 import { MissionsComponent } from './components/missions/missions.component';
 import { FeedBackMissionComponent } from './components/feed-back-mission/feed-back-mission.component';
 import { EditmissionComponent } from './components/editmission/editmission.component';
+<<<<<<< HEAD
 import { CommentaireMissionComponent } from './components/commentaire-mission/commentaire-mission.component';
 import { MaptestComponent } from './maptest/maptest.component';
+=======
+>>>>>>> 2d897340a8e13a03f3135038653eb965467515f3
 
 const routes: Routes = [
   {
@@ -29,10 +32,9 @@ const routes: Routes = [
   { path: 'lostpassword', component: PassworduserComponent},
   { path: 'home', component: HomeComponent},
   { path: 'app-profil', component: ProfilComponent},
-  { path: 'feedback-mission', component: FeedBackMissionComponent},
+  { path: 'feedback-mission/:idMission', component: FeedBackMissionComponent},
   { path: 'app-missions', component: MissionsComponent},
-  { path: 'app-editmission/:idMission', component: EditmissionComponent},
-  { path: 'commentaire-mission',component: CommentaireMissionComponent}
+  { path: 'app-editmission/:idMission', component: EditmissionComponent}
 ];
 
 @NgModule({
