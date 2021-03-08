@@ -8,12 +8,9 @@ import { map } from 'rxjs/operators';
 @Injectable({providedIn: 'any'})
 export class MissionService {
 
-<<<<<<< HEAD
   public urlpostmission="http://localhost:8080/newmission";
   public urlgetmission="http://localhost:8080/listeMission";
   public urlgetmissionenAttentePourMap="http://localhost:8080/listeMissionEnAttente";
-=======
->>>>>>> 2d897340a8e13a03f3135038653eb965467515f3
   public longlat:any=[]; 
 
   constructor(private http: HttpClient){}
