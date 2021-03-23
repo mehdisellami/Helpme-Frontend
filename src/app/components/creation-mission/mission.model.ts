@@ -1,7 +1,7 @@
 export class Mission{
-    nomMission:String
-    adressMission:String
+    nomMission:string
+    adressMission:string
     dateMission:Date
-    description:String
-    commentaire:String
+    description:string
+    commentaire:string
 }

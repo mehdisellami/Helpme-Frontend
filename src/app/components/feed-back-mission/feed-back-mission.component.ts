@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from 'src/app/auth/token-storage.service';
 import { MissionService } from 'src/app/service/mission.service';
-import { Mission } from '../creation-mission/mission.model';
 import { ActivatedRoute } from '@angular/router'; 
 
 @Component({

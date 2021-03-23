@@ -24,6 +24,7 @@
         <!-- Bouttons de navigations -->
         <mgl-control mglNavigation  ></mgl-control>
         
+        
         <!-- Localisation utilisateur -->
         <mgl-control mglGeolocate [positionOptions]="{ enableHighAccuracy: true}" [trackUserLocation]="true"  ></mgl-control>
             
@@ -80,9 +81,6 @@
     </div>
       
     <div class="col-4 ">
-      <!-- <p style="text-align:center" class="bordure"> Mission : <br> Date Mission :  - {{this.mission[x-1]?.dateMission}} <br> - Adresse : {{this.mission[x-1]?.adressMission}} <br> - Acheter : {{this.mission[x-1]?.description}} <br> <br> <br> 
-        <button type="button" class="btn btn-success"type="submit">Accepter</button> &nbsp;&nbsp;&nbsp;
-         <button type="button" class="btn btn-danger" type="reset"    >Refuser</button></p>   -->
          <table class="table table-bordered">
           <thead>
             <tr>
@@ -132,9 +130,7 @@
   </div>
 </div>
   
-
-
-   <td><button  class="btn btn-success" (click)="secToMin()">Accept</button>      
+<td><button  class="btn btn-success" (click)="secToMin()">Accept</button>      
 
   
 

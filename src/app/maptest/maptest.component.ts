@@ -1,9 +1,5 @@
-import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
-import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
-import { environment } from 'src/environments/environment';
-import { AppModule } from '../app.module';
 import { TokenStorageService } from '../auth/token-storage.service';
 import { MissionService } from '../service/mission.service';
 import { RestService } from '../service/rest.service';
@@ -48,32 +44,18 @@ public latitude:any=[];
 
       console.log(this.longitude)
 
-      console.log(this.latitude)
-
-        
-        
+      console.log(this.latitude)   
     var marker = new mapboxgl.Marker({
       draggable: false
     })
     
       .setLngLat([ this.longitude, this.latitude])
-      
-     
       .setPopup(popup)
       .addTo(this.map);
-      
-
-
-
-      
 
       this.navigationControl();
       this.LocaliserUtilisateurMapbox();
       this.getMissionenAttente();
-
-      
-
-     
   }
 
 

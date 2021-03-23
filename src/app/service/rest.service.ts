@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { User } from '../components/newuser/user.model';
 
 @Injectable({
@@ -12,7 +11,7 @@ export class RestService {
   constructor(private http: HttpClient) {}
 
   getwelcomemessage(){
-    return this.http.get<String>("https://helpmebackend.herokuapp.com/test");
+    return this.http.get<string>("https://helpmebackend.herokuapp.com/test");
   }
 
   PostUser(user){

@@ -6,9 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./passworduser.component.css']
 })
 export class PassworduserComponent implements OnInit {
-
-  constructor() {}
-
   ngOnInit(): void {}
-
 }

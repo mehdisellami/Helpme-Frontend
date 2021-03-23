@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Config } from 'protractor';
 import { RestService } from './service/rest.service';
-import { Router, NavigationEnd } from '@angular/router';
 import { TokenStorageService } from './auth/token-storage.service';
 
 @Component({

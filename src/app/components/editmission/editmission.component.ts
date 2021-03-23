@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TokenStorageService } from 'src/app/auth/token-storage.service';
 import { MissionService } from 'src/app/service/mission.service';
-import { Mission } from '../creation-mission/mission.model';
-import { MissionsComponent } from 'src/app/components/missions/missions.component';
 import { ActivatedRoute } from '@angular/router'; 
 
 @Component({
@@ -35,7 +32,6 @@ export class EditmissionComponent implements OnInit {
   {
     this.mission.EditMission(this.missionrecup).subscribe(
       (data)=>{
-        const type = 'success';
         alert("Modification effectuée !");
         window.open("/app-missions","_self");
       return data;
