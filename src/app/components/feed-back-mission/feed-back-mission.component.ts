@@ -15,7 +15,8 @@ export class FeedBackMissionComponent implements OnInit {
   public usernameConnecte :any;
   selectedValue: any;
   idMission: any;
-  missionrecup: any;
+  missionrecup: any =[];
+  d:any;
 
   constructor(private missionservice :MissionService,  private tokenStorage: TokenStorageService, private route: ActivatedRoute) { }
 
