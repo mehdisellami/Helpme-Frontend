@@ -7,7 +7,7 @@ import { User } from '../components/newuser/user.model';
 export class RestService {
 
   public urlgetuserConnecteByUsername="http://localhost:8080/listeUser";
- 
+
   constructor(private http: HttpClient) {}
 
   getwelcomemessage(){

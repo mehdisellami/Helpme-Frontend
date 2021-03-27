@@ -14,6 +14,17 @@
         <input type="date"  name="date" [(ngModel)]="missionInstance.dateMission" >
     </div>
     <div>
+
+
+        <label for="trancheect2">Tranche d'Age</label>
+        <select name="trancheAge" placeholder="Tranche d'Age" [(ngModel)]="missionInstance.trancheAge">
+          <option></option>
+          <option>jeune</option>
+
+          <option>vieux</option>
+        </select>
+
+
         <label for="">Description</label>
         <textarea  name="description" [(ngModel)]="missionInstance.description"></textarea>
     </div>

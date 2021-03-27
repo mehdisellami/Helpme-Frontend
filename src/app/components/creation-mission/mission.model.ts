@@ -4,4 +4,5 @@ export class Mission{
     dateMission:Date
     description:string
     commentaire:string
+    trancheAge:string
 }

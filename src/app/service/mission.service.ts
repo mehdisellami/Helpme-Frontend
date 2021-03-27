@@ -5,11 +5,13 @@ import { Mission } from '../components/creation-mission/mission.model';
 @Injectable({providedIn: 'any'})
 export class MissionService {
 
-  public longlat:any=[]; 
+  public longlat:any=[];
 
   constructor(private http: HttpClient){}
 
   PostMission(unemission){
+
+    console.log(unemission);
     return this.http.post<Mission>("http://localhost:8080/newmission",unemission);
   }
 
@@ -33,7 +35,7 @@ export class MissionService {
     return this.http.get ("https://api.mapbox.com/geocoding/v5/mapbox.places/"+adr+".json?proximity=-122.3995752,37.7881856&access_token=pk.eyJ1IjoibWVoZGlzZWxsYW1pIiwiYSI6ImNrZ2t5bnQ3cTA2NDAyeW8xMzBoanVnMm8ifQ.UuXfzm__C3HRsGXfAktk3w");
   }
 
-  apiWalkinggMapbox(lngA,latA,lngB,latB) {   
+  apiWalkinggMapbox(lngA,latA,lngB,latB) {
     return this.http.get ("https://api.mapbox.com/directions/v5/mapbox/walking/"+lngA+","+latA+";"+lngB+","+latB+"?approaches=unrestricted;curb&access_token=pk.eyJ1IjoibWVoZGlzZWxsYW1pIiwiYSI6ImNrZ2t5bnQ3cTA2NDAyeW8xMzBoanVnMm8ifQ.UuXfzm__C3HRsGXfAktk3w")
     ;
   }
