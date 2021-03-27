@@ -27,6 +27,10 @@ export class ProfilComponent implements OnInit {
     this. getUserMissionHistory(this.usernameConnecte);
   }
 
+  edituser():void{
+    window.open("/edituser","_self");   
+}
+
   getUser() {
     this.restservice.GetUser().subscribe(
       (data) => {

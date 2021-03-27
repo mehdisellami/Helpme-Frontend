@@ -20,6 +20,7 @@ import { MissionsComponent } from './components/missions/missions.component';
 import { FeedBackMissionComponent } from './components/feed-back-mission/feed-back-mission.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { EditmissionComponent } from './components/editmission/editmission.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { EditmissionComponent } from './components/editmission/editmission.compo
     MissionsComponent,
     FeedBackMissionComponent,
     ProfilComponent,
-    EditmissionComponent
+    EditmissionComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
