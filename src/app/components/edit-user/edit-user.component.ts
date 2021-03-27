@@ -10,9 +10,9 @@ import { User } from '../newuser/user.model';
 })
 export class EditUserComponent implements OnInit {
 
-  public user:any=[];
-  public userbyusername:any=[];
-  public usernameConnecte;
+  user:any=[];
+  userbyusername:any=[];
+  usernameConnecte;
   profilInstance: User = new User();
 
   constructor(public restservice : RestService , private tokenStorage: TokenStorageService) { }
@@ -22,21 +22,24 @@ export class EditUserComponent implements OnInit {
     this.getUserbyUsername(this.usernameConnecte);
   }
 
-  getUser() {
-    this.restservice.GetUser().subscribe(
-      (data) => {
-        this.user = data;
-        console.log(this.user);
-      },
-    );
-  }
-
   getUserbyUsername(m) {
     this.restservice.getUserbyUsernameConnecte(m).subscribe(
       (data) => {
         this.userbyusername = data;
         console.log(this.userbyusername);
       },
+    );
+  }
+
+  edituser()
+  {
+    this.restservice.edituser(this.user).subscribe(
+      (data)=>{
+        alert("Modification effectuée !");
+        window.open("/app-profil","_self");
+      return data;
+    },
+    (err)=>{alert("ERROR");}
     );
   }
 }

@@ -30,4 +30,8 @@ export class RestService {
 
     return this.http.get<User>("http://localhost:8080/findUserbyUsername/" + username);
   }
+
+  edituser(user){
+    return this.http.post<User>("http://localhost:8080/edituser/",user);
+  }
 }

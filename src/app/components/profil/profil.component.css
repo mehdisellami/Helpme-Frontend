@@ -81,6 +81,10 @@ fieldset, label { margin: 0; padding: 0; }
  float: right; 
 }
 
+.centrer {
+  text-align: center;
+}
+
 /***** CSS Magic to Highlight Stars on Hover *****/
 
 .rating > input:checked ~ label, /* show gold star when clicked */
