@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MissionService } from 'src/app/service/mission.service';
 import { ActivatedRoute } from '@angular/router'; 
+import { Mission } from '../creation-mission/mission.model';
 
 @Component({
   selector: 'app-editmission',
@@ -10,7 +11,9 @@ import { ActivatedRoute } from '@angular/router';
 export class EditmissionComponent implements OnInit {
 
   idMission: any;
+  missionInstance:Mission = new Mission();
   missionrecup: any;
+  pref: any [];
 
   constructor(private mission:MissionService, private route: ActivatedRoute) { }
 

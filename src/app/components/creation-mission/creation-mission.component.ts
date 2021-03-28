@@ -27,8 +27,12 @@ export class CreationMissionComponent implements OnInit {
     },
     (err)=>{});  
   }
-  recupererPref(){
-    console.log(this.pref)
-      
-  }
+  /*recupererCategorie(){
+    this.mission.getPref().subscribe(
+      (data)=>{
+       this.pref=data
+       console.log(this.pref)
+      }
+    )
+  }*/
 }

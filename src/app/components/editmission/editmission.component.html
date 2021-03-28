@@ -17,6 +17,15 @@
         <label for="">Description</label>
         <textarea  name="description" [(ngModel)]="missionrecup.description"></textarea>
     </div>
+    <div>
+        <label for="">Preference </label>
+            <select type="text" id="pref-select" name="pref" [(ngModel)]="missionInstance.prefMissionId"
+                style="width: 200px;">
+                <option *ngFor="let x of pref" [ngValue]="x.id">{{x.prefMissionId}}</option>
+                <option *ngFor="let x of pref" [ngValue]="x.id">{{x.prefMissionId}}</option>
+            </select>
+        </div>
+   
     <div style="text-align: center;">
         <button type="submit" class="btn btn-primary" (click)="EditMission()">Modifier</button>
         <button type="reset" class="btn btn-primary">Réinitialiser</button>

@@ -13,6 +13,10 @@ export class MissionService {
     return this.http.post<Mission>("http://localhost:8080/newmission",unemission);
   }
 
+ /* getPref(){
+    return this.http.get<object>("http://localhost:8080/getpref",unepref);
+  }*/
+
   GetMission(){
     return this.http.get<Object>("http://localhost:8080/listeMission");
   }
