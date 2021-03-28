@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MissionService } from 'src/app/service/mission.service';
 import { Mission } from './mission.model';
+import { pref } from './pref.model';
+
 
 @Component({
   selector: 'app-creation-mission',
@@ -10,6 +12,7 @@ import { Mission } from './mission.model';
 export class CreationMissionComponent implements OnInit {
 
   missionInstance:Mission = new Mission();
+  pref: any[];
 
   constructor(private mission:MissionService) {}
 
@@ -23,5 +26,9 @@ export class CreationMissionComponent implements OnInit {
       return this.missionInstance=data;
     },
     (err)=>{});  
+  }
+  recupererPref(){
+    console.log(this.pref)
+      
   }
 }
