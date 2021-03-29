@@ -89,20 +89,15 @@ header {
 		text-align: center;
 		margin: auto;
 	}
-	img {
-	
-	}
 	.nav-area {
 		float: none;
 		margin-top: 0;
+		text-align: center;
 	}
 	.nav-area li a  :hover {
 		padding: 5px;
 		font-size: 11px;
 
-	}
-	.nav-area {
-		text-align: center;
 	}
 	.welcome-text {
 		width: 100%;

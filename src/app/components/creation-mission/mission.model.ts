@@ -1,7 +1,12 @@
-export class Mission{
-    nomMission:String
-    adressMission:String
+import {pref} from "./pref.model";
+
+ export class Mission{
+    nomMission:string
+    adressMission:string
     dateMission:Date
-    description:String
-    commentaire:String
+    description:string
+    commentaire:string
+    prefMissionId:pref={
+        id:''
+    }
 }

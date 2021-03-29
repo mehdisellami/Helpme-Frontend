@@ -33,8 +33,7 @@ export class MissionsComponent implements OnInit {
       alert("Mission " + id + " supprimée");
       this.reloadPage(); 
     },
-    (err)=>{
-    }
+    (err)=>{alert("ERROR");}
     );  
   }
 
@@ -48,8 +47,7 @@ export class MissionsComponent implements OnInit {
       alert("Mission " + id + " terminée");
       this.reloadPage(); 
     },
-    (err)=>{
-    }
+    (err)=>{alert("ERROR");}
     );  
   }
 
@@ -59,8 +57,7 @@ export class MissionsComponent implements OnInit {
       alert("Vous avez annulé la fin de la mission " + id);
       this.reloadPage(); 
     },
-    (err)=>{
-    }
+    (err)=>{alert("ERROR");}
     );  
   }
 

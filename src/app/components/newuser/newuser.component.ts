@@ -30,7 +30,7 @@ export class NewuserComponent implements OnInit {
       alert("Utilisateur ajouté");
       return this.userInstance=data;
     },
-    (err)=>{}
+    (err)=>{alert("ERROR");}
     );
   }
 
@@ -47,7 +47,6 @@ export class NewuserComponent implements OnInit {
       data => {
         console.log(data);
         this.isSignedUp = true;
-        const type = 'success';
         this.isSignUpFailed = false;
       },
       error => {

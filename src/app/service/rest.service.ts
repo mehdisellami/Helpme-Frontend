@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { User } from '../components/newuser/user.model';
 
 @Injectable({
@@ -12,7 +11,7 @@ export class RestService {
   constructor(private http: HttpClient) {}
 
   getwelcomemessage(){
-    return this.http.get<String>("http://localhost:8080/test");
+    return this.http.get<string>("http://localhost:8080/test");
   }
 
   PostUser(user){
@@ -30,5 +29,9 @@ export class RestService {
   getUserbyUsernameConnecte(username) {
 
     return this.http.get<User>("http://localhost:8080/findUserbyUsername/" + username);
+  }
+
+  edituser(user){
+    return this.http.post<User>("http://localhost:8080/edituser/",user);
   }
 }

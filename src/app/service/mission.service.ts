@@ -1,6 +1,5 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Mission } from '../components/creation-mission/mission.model';
 
 import { map } from 'rxjs/operators';
@@ -19,6 +18,10 @@ export class MissionService {
   PostMissionLngLat(idMission,unemission){
     return this.http.post <MissionLngLat>("http://localhost:8080/MissionPos/"+idMission,unemission);
   }
+
+ /* getPref(){
+    return this.http.get<object>("http://localhost:8080/getpref",unepref);
+  }*/
 
   GetMission(){
     return this.http.get<Object>("http://localhost:8080/listeMission");

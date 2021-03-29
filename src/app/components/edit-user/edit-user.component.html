@@ -1,0 +1,50 @@
+<body>
+    <table class="table table-bordered infos">
+      <thead>
+        <tr>
+          <th>Nom & Prénom</th>
+          <td><strong>{{userbyusername[0]?.name}}</strong></td>
+        </tr>
+        <tr>
+          <th>Identifiant</th>
+          <td><strong>{{userbyusername[0]?.username}}</strong></td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>{{userbyusername[0]?.email}}</td>
+        </tr>
+        <tr>
+          <th>Téléphone</th>
+          <td>{{userbyusername[0]?.tel}}</td>
+        </tr>
+        <tr>
+          <th>Age</th>
+          <td>{{userbyusername[0]?.age}}</td>
+        </tr>
+      </thead>
+    </table>
+
+    <form name="form">
+      <div>
+          <label for="">Nom & Prénom</label>
+          <input type="text"  name="typemission">
+      </div>
+      <div>
+          <label for="">Identifiant</label>
+          <input type="text"  name="Identifiant">
+      </div>
+      <div>
+        <label for="">Email</label>
+        <input type="text"  name="email">
+      </div>
+      <div>
+        <label for="">Téléphone</label>
+        <input type="text"  name="telephone">
+      </div>
+      <div style="text-align: center;">
+          <button type="submit" class="btn btn-primary" (click)="edituser()">Modifier</button>
+          <button type="reset" class="btn btn-primary">Réinitialiser</button>
+      </div>
+  </form>
+
+</body>

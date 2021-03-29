@@ -13,15 +13,24 @@
         <label for="">Date</label>
         <input type="date"  name="date" [(ngModel)]="missionInstance.dateMission" >
     </div>
-    <!---
     <div>
-        <label for="">Téléphone</label>
-        <input type="tel"  name="telephone" pattern="^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$"  [(ngModel)]="missionInstance.tel">
+        <input type="checkbox" name="pref1" value="Jeune">
+        <label for="pref1">Jeune</label><br>
+        <input type="checkbox" name="pref2" value="Vieux">
+        <label for="pref2">Vieux</label><br>
     </div>
--->
     <div>
         <label for="">Description</label>
         <textarea  name="description" [(ngModel)]="missionInstance.description"></textarea>
+    </div>
+
+    <div>
+        <label for="">Preference </label>
+            <select type="text" id="pref-select" name="pref" [(ngModel)]="missionInstance.prefMissionId"
+                style="width: 200px;">
+                <option *ngFor="let x of pref" [ngValue]="x.id">{{x.prefMissionId}}</option>
+                <option *ngFor="let x of pref" [ngValue]="x.id">{{x.prefMissionId}}</option>
+            </select>
     </div>
     <div style="text-align: center;">
         <button type="submit" class="btn btn-primary" (click)="btnadd()">Créer</button>

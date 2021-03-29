@@ -10,6 +10,7 @@ import { Mission } from './mission.model';
 export class CreationMissionComponent implements OnInit {
 
   missionInstance:Mission = new Mission();
+  pref: any[];
 
   constructor(private mission:MissionService) {}
 
@@ -22,6 +23,14 @@ export class CreationMissionComponent implements OnInit {
       window.open("/app-missions","_self");
       return this.missionInstance=data;
     },
-    (err)=>{});  
+    (err)=>{alert("ERROR");});  
   }
+  /*recupererCategorie(){
+    this.mission.getPref().subscribe(
+      (data)=>{
+       this.pref=data
+       console.log(this.pref)
+      }
+    )
+  }*/
 }

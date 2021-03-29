@@ -4,11 +4,11 @@
     <table class="table table-bordered infos">
       <thead>
         <tr>
-          <th>Nom</th>
+          <th>Nom & Prénom</th>
           <td><strong>{{userbyusername[0]?.name}}</strong></td>
         </tr>
         <tr>
-          <th>Prénom</th>
+          <th>Nom d'utilisateur</th>
           <td><strong>{{userbyusername[0]?.username}}</strong></td>
         </tr>
         <tr>
@@ -21,6 +21,8 @@
         </tr>
       </thead>
     </table>
+
+    <button (click)="edituser()" class="btn btn-danger">Modifier</button>
 
     <h1> Missions terminées </h1><br>
     <table class="table table-bordered">

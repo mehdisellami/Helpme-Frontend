@@ -1,5 +1,3 @@
-import { Tracing } from 'trace_events';
-
 export class User{
     username:string;
     name:string;
