@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MissionService } from 'src/app/service/mission.service';
 import { Mission } from './mission.model';
-import { pref } from './pref.model';
-
 
 @Component({
   selector: 'app-creation-mission',
@@ -25,7 +23,7 @@ export class CreationMissionComponent implements OnInit {
       window.open("/app-missions","_self");
       return this.missionInstance=data;
     },
-    (err)=>{});  
+    (err)=>{alert("ERROR");});  
   }
   /*recupererCategorie(){
     this.mission.getPref().subscribe(

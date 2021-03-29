@@ -25,11 +25,7 @@ h1 {
   display:inline-block;
   margin: 40px 8px 10px 8px;
   color: #000000;
-  font-size: 1.5em;
-  margin: 10px;
-  
 }
-
 
 table {
   margin: 0 auto;
@@ -66,7 +62,6 @@ fieldset, label { margin: 0; padding: 0; }
 .rating > label:before { 
   margin: 5px;
   font-size: 1.25em;
-  font-family: FontAwesome;
   display: inline-block;
   content: "\f005";
 }
