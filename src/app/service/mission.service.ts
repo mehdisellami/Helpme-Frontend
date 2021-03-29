@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Mission } from '../components/creation-mission/mission.model';
 
 import { map } from 'rxjs/operators';
+import { MissionLngLat } from '../components/creation-mission/missionLnglatModel';
 
 @Injectable({providedIn: 'any'})
 export class MissionService {
@@ -14,6 +15,9 @@ export class MissionService {
 
   PostMission(unemission){
     return this.http.post<Mission>("http://localhost:8080/newmission",unemission);
+  }
+  PostMissionLngLat(idMission,unemission){
+    return this.http.post <MissionLngLat>("http://localhost:8080/MissionPos/"+idMission,unemission);
   }
 
   GetMission(){

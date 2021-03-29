@@ -8,6 +8,7 @@ import { logging } from 'protractor';
 import { htmlAstToRender3Ast } from '@angular/compiler/src/render3/r3_template_transform';
 import { TokenStorageService } from 'src/app/auth/token-storage.service';
 import { RestService } from 'src/app/service/rest.service';
+import { MissionLngLat } from '../creation-mission/missionLnglatModel';
 
 
 @Component({
@@ -46,6 +47,11 @@ public tokenUsername :any;
   public secondeminute1:any=[];
   public secondeminute3:any=[];
 
+  public missionLngLatInstance:MissionLngLat={
+    lng:'',
+    lat:''
+  };
+
 
   public MintoSec : any;
   CheckedBx=false;
@@ -55,7 +61,7 @@ public tokenUsername :any;
     this.CheckedBx=true;
   }
 
-
+ // missionLngLatInstance:MissionLngLat = new MissionLngLat();
  
 
 
@@ -69,6 +75,7 @@ public tokenUsername :any;
 
     this.tokenUsername=this.tokenStorage.getUsername();
     this.getUserIdbyUsername(this.tokenUsername);
+    console.log(this.longlat)
 
 
 
@@ -114,6 +121,9 @@ public tokenUsername :any;
    this.RestMission.GetMissionenAttente().subscribe(
     (data )=>{
         this.mission=data;    
+        this.AdresstoLongLAt(this.mission?.adressMission);
+
+        
           console.log(data);
         },
     );
@@ -124,9 +134,13 @@ public tokenUsername :any;
       this.RestMission.getLongLat(this.mission[i]?.adressMission).subscribe(
       data =>{
         this.longlat.push(data);
+        this.missionLngLatInstance.lng=this.longlat[i]?.features[0].center[0]
+        this.missionLngLatInstance.lat=this.longlat[i]?.features[0].center[1]
+        this.sendLngLAtMission(this.mission[i]?.idMission)
+        console.log(this.missionLngLatInstance.lat)
         this.distance(this.longlat[i]?.features[0].center[1],this.longlat[i]?.features[0].center[0],this.maposition[1],this.maposition[0]);
         this.apiwalkingMapbox(this.maposition[0],this.maposition[1],this.longlat[i]?.features[0].center[0],this.longlat[i]?.features[0].center[1])  ;
-        this.apiDrivingMapbox(this.maposition[0],this.maposition[1],this.longlat[i]?.features[0].center[0],this.longlat[i]?.features[0].center[1])
+       this.apiDrivingMapbox(this.maposition[0],this.maposition[1],this.longlat[i]?.features[0].center[0],this.longlat[i]?.features[0].center[1])
         this.apiCyclingMapbox(this.maposition[0],this.maposition[1],this.longlat[i]?.features[0].center[0],this.longlat[i]?.features[0].center[1])
 
       },);
@@ -229,6 +243,14 @@ apiwalkingMapbox(lnga,lata,lngb,latb) {
 
   }
 
+
+  sendLngLAtMission(idMission){
+    this.RestMission.PostMissionLngLat(idMission,this.missionLngLatInstance)
+    .subscribe( data => {
+      return this.missionLngLatInstance=data;
+    },
+    (err)=>{});  
+  }
 
   
 }
